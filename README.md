@@ -24,10 +24,12 @@ I am currently pursuing a PhD in Computer Science at Trinity College Dublin, spe
    [GitHub Repository](https://github.com/Mdraqibkhan/UIEPTA)
 
 ### Skills  
+- Signal Processing
+- Images processing
 - Deep Learning
 - Computer Vision
 - GitHub  
-- Programming  
+- Programming, Python, MATLAB, C/C++   
 - Pattern Recognition  
 
 ### Current Research  
