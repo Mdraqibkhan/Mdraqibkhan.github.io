@@ -1,6 +1,6 @@
 ### MD Raqib Khan  
 **PhD Candidate @ Trinity College Dublin, Ireland**  
-**Research Focus: Computer Vision & Graphics**
+**Research Focus: Computer Vision & Graphics** 
 
 I am currently pursuing a PhD in Computer Science at Trinity College Dublin, specializing in **Stereo Matching** and **Depth Estimation** for advanced robotics, augmented reality (AR), and virtual reality (VR) applications. My research addresses critical challenges in **3D reconstruction** and **autonomous driving**, focusing on improving the real-time performance of deep learning models in these domains. Under the supervision of [**Subrahmanyam Murala** (TCD)](https://www.tcd.ie/scss/people/academic-staff/muralas/), [**Peter Corcoran** (UoG)](https://www.universityofgalway.ie/science-engineering/staff-profiles/petercorcoran/), and [**Carol O’Sullivan** (TCD)](https://www.tcd.ie/scss/people/academic-staff/osullica/), my goal is to develop lightweight deep learning models that enhance the accuracy and efficiency of depth estimation systems.
 
