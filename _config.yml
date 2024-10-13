@@ -1,3 +1,5 @@
-title: Md Raqib Khan
-theme: jekyll-themes-minimal
-
+title: Md Raqib Khan's Portfolio
+description: Personal portfolio site for showcasing projects.
+theme: minimal
+url: "https://Mdraqibkhan.github.io"
+baseurl: ""
