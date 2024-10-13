@@ -13,9 +13,10 @@ PhD Researcher @ Trinity College Dublin | Computer Vision & Graphics
   *2014 - 2018*  
 
 **Skills:**  
+- Signal Processing
+- Programming  Python, C/C++, MATLAB
 - Deep Learning  
 - Computer Vision  
-- Programming  
 - GitHub  
 - Pattern Recognition  
 
