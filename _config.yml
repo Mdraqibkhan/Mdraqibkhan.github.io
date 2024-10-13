@@ -1,6 +1,7 @@
 title: Md Raqib Khan
 logo: /assets/IMG_20241013_163550.jpg
 description: Personal portfolio site for showcasing projects.
-theme: minimal
+theme: jekyll-theme-minimal
+show_dwnloads: true
 url: "https://Mdraqibkhan.github.io"
 baseurl: ""
