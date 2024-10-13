@@ -1,5 +1,5 @@
 title: "Md Raqib Khan"
-logo: "/assets/unnamed.jpg"  # Make sure this file exists at the specified path
+logo: "unnamed.jpg"  # Make sure this file exists at the specified path
 description: "Computer Science and Signal Processing Engineer"
 theme: jekyll-theme-minimal
 show_downloads: true  # Corrected typo here
