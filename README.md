@@ -1,6 +1,6 @@
 ### MD Raqib Khan  
 **PhD Candidate @ Trinity College Dublin, Ireland**  
-**Research Focus: Computer Vision & Graphics** 
+**Research Focus: Computer Vision & Graphics**  
 
 I am currently pursuing a PhD in Computer Science at Trinity College Dublin, specializing in **Stereo Matching** and **Depth Estimation** for advanced robotics, augmented reality (AR), and virtual reality (VR) applications. My research addresses critical challenges in **3D reconstruction** and **autonomous driving**, focusing on improving the real-time performance of deep learning models in these domains. Under the supervision of [**Subrahmanyam Murala** (TCD)](https://www.tcd.ie/scss/people/academic-staff/muralas/), [**Peter Corcoran** (UoG)](https://www.universityofgalway.ie/science-engineering/staff-profiles/petercorcoran/), and [**Carol O’Sullivan** (TCD)](https://www.tcd.ie/scss/people/academic-staff/osullica/), my goal is to develop lightweight deep learning models that enhance the accuracy and efficiency of depth estimation systems.
 
@@ -8,13 +8,19 @@ I am currently pursuing a PhD in Computer Science at Trinity College Dublin, spe
 - **Doctor of Philosophy (PhD), Computer Science**  
   *Trinity College Dublin* (Sep 2023 - Aug 2027)  
   *Research Areas*: Computer Vision, Graphics, Stereo Matching, Depth Estimation  
-   
+
 - **Master of Technology (M.Tech), Signal Processing and Communication**  
   *Indian Institute of Technology, Ropar* (Jan 2021 - May 2023)  
   *Skills*: Deep Learning, Computer Vision, Programming, Pattern Recognition  
 
 - **Bachelor of Technology (B.Tech), Electronics and Communications Engineering**  
   *Rajasthan Technical University, Kota* (2014 - 2018)  
+
+### Work Experience  
+- **Project Associate**  
+  *Indian Institute of Technology, Ropar*  
+  - Developed a novel architecture, **Spectroformer**, which applies a Multi-Domain Query Cascaded Transformer Network for underwater image enhancement.  
+  - Conducted research on **Underwater Image Enhancement** using Phase Transfer and Attention techniques, significantly improving image quality in challenging underwater conditions.
 
 ### Research Projects  
 1. **Spectroformer**: Multi-Domain Query Cascaded Transformer Network for Underwater Image Enhancement  
@@ -24,13 +30,13 @@ I am currently pursuing a PhD in Computer Science at Trinity College Dublin, spe
    [GitHub Repository](https://github.com/Mdraqibkhan/UIEPTA)
 
 ### Skills  
-- Signal Processing
-- Images processing
-- Deep Learning
-- Computer Vision
+- Signal Processing  
+- Image Processing  
+- Deep Learning  
+- Computer Vision  
 - GitHub  
-- Programming, Python, MATLAB, C/C++   
-- Pattern Recognition
+- Programming: Python, MATLAB, C/C++  
+- Pattern Recognition  
 
 ### Publications  
 
@@ -47,6 +53,4 @@ I am currently pursuing a PhD in Computer Science at Trinity College Dublin, spe
 3. **"NTIRE 2024 image shadow removal challenge report."**  
    In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition*, 2024, pp. 6547-6570.  
    A comprehensive challenge report detailing state-of-the-art techniques and solutions for image shadow removal.
-
-
 
