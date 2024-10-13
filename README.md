@@ -1,4 +1,4 @@
-### MD Raqib Khan  
+ 
 **PhD Candidate @ Trinity College Dublin, Ireland**  
 **Research Focus: Computer Vision & Graphics**  
 
