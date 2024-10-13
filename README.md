@@ -30,8 +30,23 @@ I am currently pursuing a PhD in Computer Science at Trinity College Dublin, spe
 - Computer Vision
 - GitHub  
 - Programming, Python, MATLAB, C/C++   
-- Pattern Recognition  
+- Pattern Recognition
 
-### Current Research  
-My research focuses on designing learning-based methods for stereo matching and depth estimation, with the aim of developing efficient, real-time models for AR, VR, and robotics. My work seeks to address the generalization limitations of existing deep learning approaches while optimizing models for high-performance depth estimation in challenging environments.
+### Publications  
+
+1. **"Spectroformer: Multi-domain query cascaded transformer network for underwater image enhancement."**  
+   In *Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision*, 2024, pp. 1454-1463.  
+   This work introduces Spectroformer, a transformer-based network for multi-domain underwater image enhancement using cascaded query transformers.  
+   [GitHub Repository](https://github.com/Mdraqibkhan/Spectroformer)
+
+2. **"Underwater image enhancement with phase transfer and attention."**  
+   In *2023 International Joint Conference on Neural Networks (IJCNN)*, IEEE, 2023, pp. 1-8.  
+   The paper presents a novel method for underwater image enhancement combining phase transfer with attention mechanisms to address visibility and color distortions.  
+   [GitHub Repository](https://github.com/Mdraqibkhan/UIEPTA)
+
+3. **"NTIRE 2024 image shadow removal challenge report."**  
+   In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition*, 2024, pp. 6547-6570.  
+   A comprehensive challenge report detailing state-of-the-art techniques and solutions for image shadow removal.
+
+
 
