@@ -1,9 +1,9 @@
 # About me
 
 # Eduducation
- ### PhD
- ### Graduation 
- ### Post Graduation 
+## PhD
+## Graduation 
+## Post Graduation 
  
 # Work experience 
 
