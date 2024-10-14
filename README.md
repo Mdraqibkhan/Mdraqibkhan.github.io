@@ -57,6 +57,4 @@ I am currently pursuing a PhD in Computer Science at Trinity College Dublin, spe
    In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition*, 2024, pp. 6547-6570.  
    A comprehensive challenge report detailing state-of-the-art techniques and solutions for image shadow removal.
 
----
 
-Make sure to replace the placeholders for your **Google Scholar** and **LinkedIn** links with the actual URLs.
