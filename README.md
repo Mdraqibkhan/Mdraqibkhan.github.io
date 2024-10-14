@@ -7,7 +7,7 @@ Here’s an updated version of your profile that includes links to your Google S
 
 I am currently pursuing a PhD in Computer Science at Trinity College Dublin, specializing in **Stereo Matching** and **Depth Estimation** for advanced robotics, augmented reality (AR), and virtual reality (VR) applications. My research addresses critical challenges in **3D reconstruction** and **autonomous driving**, focusing on improving the real-time performance of deep learning models in these domains. Under the supervision of [**Subrahmanyam Murala** (TCD)](https://www.scss.tcd.ie/~muralas/), [**Peter Corcoran** (UoG)](https://www.universityofgalway.ie/science-engineering/staff-profiles/petercorcoran/), and [**Carol O’Sullivan** (TCD)](https://www.tcd.ie/scss/people/academic-staff/osullica/), my goal is to develop lightweight deep learning models that enhance the accuracy and efficiency of depth estimation systems.
 
-[**Google Scholar**](https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ) | [**LinkedIn**](https://www.linkedin.com/in/md-raqib-khan/)
+[**Google Scholar**](https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ) | [![LinkedIn Logo](https://www.linkedin.com/in/md-raqib-khan/)]((https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png))
 
 ### Education  
 - **Doctor of Philosophy (PhD), Computer Science**  
