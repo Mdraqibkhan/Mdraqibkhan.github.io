@@ -1,8 +1,13 @@
- 
+Here’s an updated version of your profile that includes links to your Google Scholar and LinkedIn profiles:
+
+---
+
 **PhD Candidate @ Trinity College Dublin, Ireland**  
 **Research Focus: Computer Vision & Graphics**  
 
 I am currently pursuing a PhD in Computer Science at Trinity College Dublin, specializing in **Stereo Matching** and **Depth Estimation** for advanced robotics, augmented reality (AR), and virtual reality (VR) applications. My research addresses critical challenges in **3D reconstruction** and **autonomous driving**, focusing on improving the real-time performance of deep learning models in these domains. Under the supervision of [**Subrahmanyam Murala** (TCD)](https://www.scss.tcd.ie/~muralas/), [**Peter Corcoran** (UoG)](https://www.universityofgalway.ie/science-engineering/staff-profiles/petercorcoran/), and [**Carol O’Sullivan** (TCD)](https://www.tcd.ie/scss/people/academic-staff/osullica/), my goal is to develop lightweight deep learning models that enhance the accuracy and efficiency of depth estimation systems.
+
+[**Google Scholar**](https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ) | [**LinkedIn**](https://www.linkedin.com/in/md-raqib-khan/)
 
 ### Education  
 - **Doctor of Philosophy (PhD), Computer Science**  
@@ -54,3 +59,6 @@ I am currently pursuing a PhD in Computer Science at Trinity College Dublin, spe
    In *Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition*, 2024, pp. 6547-6570.  
    A comprehensive challenge report detailing state-of-the-art techniques and solutions for image shadow removal.
 
+---
+
+Make sure to replace the placeholders for your **Google Scholar** and **LinkedIn** links with the actual URLs.
