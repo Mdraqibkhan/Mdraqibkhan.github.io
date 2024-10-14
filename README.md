@@ -1,6 +1,3 @@
-Here’s an updated version of your profile that includes links to your Google Scholar and LinkedIn profiles:
-
----
 
 **PhD Candidate @ Trinity College Dublin, Ireland**  
 **Research Focus: Computer Vision & Graphics**  
