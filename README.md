@@ -31,6 +31,11 @@ Visit my [**Google Scholar**](https://scholar.google.com/citations?view_op=list_
 
 2. **Underwater Image Enhancement with Phase Transfer and Attention (UIEPTA)**  
    [GitHub Repository](https://github.com/Mdraqibkhan/UIEPTA)
+ 
+### AI-Based Ball and Wicket Detection with Pitch Mapping and Impact Analysis in Cricket"
+
+  **Project Summary:**  
+   This project focuses on developing an computer vision model to detect the cricket ball and wicket in real time, map       the pitch, and accurately identify the ball's impact point after being thrown. Using advanced computer vision    techniques, the model tracks the ball’s trajectory, determines the exact landing spot on the pitch, and assesses interactions with the wicket. This information provides insights into ball behavior, such as bounce and spin, which are critical for performance analysis and strategic planning. The project aims to enhance decision-making in cricket through precise ball tracking and pitch analytics.
 
 ### Skills  
 - Signal Processing  
