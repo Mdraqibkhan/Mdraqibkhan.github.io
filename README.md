@@ -23,7 +23,7 @@ Visit my [**Google Scholar**](https://scholar.google.com/citations?view_op=list_
 - **Project Associate**  
   *Indian Institute of Technology, Ropar*  
   - Developed a novel architecture, **Spectroformer**, which applies a Multi-Domain Query Cascaded Transformer Network for underwater image enhancement.  
-  - Conducted research on **Underwater Image Enhancement** using Phase Transfer and Attention techniques, significantly improving image quality in challenging underwater conditions.
+  - Conducted research on **Underwater Image Enhancement** using using Signal Processing and Transformer based Deep learning techniques, significantly improving image quality in challenging underwater conditions.
 
 ### Research Projects  
 1. **Spectroformer**: Multi-Domain Query Cascaded Transformer Network for Underwater Image Enhancement  
@@ -45,7 +45,12 @@ Visit my [**Google Scholar**](https://scholar.google.com/citations?view_op=list_
 - Programming: Python, MATLAB, C/C++  
 - Pattern Recognition  
 
-### Publications  
+### Publications 
+1. ** “Phase-based Attention Mechanism for Underwater Image Restoration and Beyond”**
+    IEEE/CVF Winter Conference on Applications of Computer Vision (WACV 2025) (Accepted h-index:109)
+
+2. ** ACFTNet: Attentive Color Fusion Transformer Network (ACFTNet) for Underwater Image Enhancement”**
+   International Conference on Document Analysis and Recognition (ICPR 2025) (Accepted h-index:52)   
 
 1. **"Spectroformer: Multi-domain query cascaded transformer network for underwater image enhancement."**  
    In *Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision*, 2024, pp. 1454-1463.  
