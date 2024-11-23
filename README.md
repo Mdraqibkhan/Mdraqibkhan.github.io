@@ -46,10 +46,10 @@ Visit my [**Google Scholar**](https://scholar.google.com/citations?view_op=list_
 - Pattern Recognition  
 
 ### Publications 
-1. ** “Phase-based Attention Mechanism for Underwater Image Restoration and Beyond”**
+1. **“Phase-based Attention Mechanism for Underwater Image Restoration and Beyond”**
     IEEE/CVF Winter Conference on Applications of Computer Vision (WACV 2025) (Accepted h-index:109)
 
-2. ** ACFTNet: Attentive Color Fusion Transformer Network (ACFTNet) for Underwater Image Enhancement”**
+2. **ACFTNet: Attentive Color Fusion Transformer Network (ACFTNet) for Underwater Image Enhancement”**
    International Conference on Document Analysis and Recognition (ICPR 2025) (Accepted h-index:52)   
 
 1. **"Spectroformer: Multi-domain query cascaded transformer network for underwater image enhancement."**  
