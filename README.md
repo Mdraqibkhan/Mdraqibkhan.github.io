@@ -26,6 +26,9 @@ Visit my [**Google Scholar**](https://scholar.google.com/citations?view_op=list_
   - Conducted research on **Underwater Image Enhancement** using using Signal Processing and Transformer based Deep learning techniques, significantly improving image quality in challenging underwater conditions.
 
 ### Research Projects  
+1. **Phaseformer**: Phase-based Attention Mechanism for Underwater Image
+Restoration and Beyond  
+   [GitHub Repository](https://github.com/Mdraqibkhan/Phaseformer)
 1. **Spectroformer**: Multi-Domain Query Cascaded Transformer Network for Underwater Image Enhancement  
    [GitHub Repository](https://github.com/Mdraqibkhan/Spectroformer)
 
