@@ -29,10 +29,10 @@ Visit my [**Google Scholar**](https://scholar.google.com/citations?view_op=list_
 1. **Phaseformer**: Phase-based Attention Mechanism for Underwater Image
 Restoration and Beyond  
    [GitHub Repository](https://github.com/Mdraqibkhan/Phaseformer)
-1. **Spectroformer**: Multi-Domain Query Cascaded Transformer Network for Underwater Image Enhancement  
+2.  **Spectroformer**: Multi-Domain Query Cascaded Transformer Network for Underwater Image Enhancement  
    [GitHub Repository](https://github.com/Mdraqibkhan/Spectroformer)
 
-2. **Underwater Image Enhancement with Phase Transfer and Attention (UIEPTA)**  
+3. **Underwater Image Enhancement with Phase Transfer and Attention (UIEPTA)**  
    [GitHub Repository](https://github.com/Mdraqibkhan/UIEPTA)
  
 ### AI-Based Ball and Wicket Detection with Pitch Mapping and Impact Analysis in Cricket"
