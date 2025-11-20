@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Md Raqib Khan</title>
     <meta name="description" content="Personal portfolio of Md Raqib Khan">
-    
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+
     <!-- Styles -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -21,7 +23,8 @@
                 <a href="#" class="logo">MRK.</a>
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#publications">Publications</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -33,9 +36,10 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <h1>Building Digital <br><span style="color: var(--accent-primary)">Experiences</span></h1>
-                    <p>I'm Md Raqib Khan, a passionate developer creating modern and functional web solutions.</p>
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <h1>PhD Candidate & <br><span style="color: var(--accent-primary)">Researcher</span></h1>
+                    <p>I'm Md Raqib Khan, a PhD Candidate at Trinity College Dublin specializing in Computer Vision,
+                        Stereo Matching, and Depth Estimation.</p>
+                    <a href="#research" class="btn btn-primary">View My Research</a>
                 </div>
             </div>
             <div class="hero-image"></div>
@@ -52,18 +56,23 @@
                     <div class="about-text">
                         <h2 class="section-title">About Me</h2>
                         <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
-                            I am a dedicated developer with a keen eye for detail and a passion for building software that makes a difference. 
-                            I specialize in web development and love exploring new technologies to solve real-world problems.
+                            I am currently pursuing a PhD in Computer Science at <strong>Trinity College
+                                Dublin</strong>, focusing on <strong>Stereo Matching</strong> and <strong>Depth
+                                Estimation</strong> for advanced robotics, AR, and VR applications.
+                        </p>
+                        <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
+                            My research addresses critical challenges in 3D reconstruction and autonomous driving,
+                            aiming to develop lightweight deep learning models that enhance accuracy and efficiency. I
+                            work under the supervision of Subrahmanyam Murala, Peter Corcoran, and Carol O’Sullivan.
                         </p>
                         <div class="skills">
-                            <h3 style="margin-bottom: 1rem; font-size: 1.25rem;">Tech Stack</h3>
+                            <h3 style="margin-bottom: 1rem; font-size: 1.25rem;">Research Areas</h3>
                             <div class="project-tags">
-                                <span class="tag">HTML5</span>
-                                <span class="tag">CSS3</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">React</span>
-                                <span class="tag">Node.js</span>
-                                <span class="tag">Git</span>
+                                <span class="tag">Computer Vision</span>
+                                <span class="tag">Deep Learning</span>
+                                <span class="tag">Stereo Matching</span>
+                                <span class="tag">Depth Estimation</span>
+                                <span class="tag">Signal Processing</span>
                             </div>
                         </div>
                     </div>
@@ -71,41 +80,91 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="projects">
+        <!-- Research & Projects Section -->
+        <section id="research" class="projects">
             <div class="container">
-                <h2 class="section-title">Featured Projects</h2>
+                <h2 class="section-title">Research & Projects</h2>
                 <div class="project-grid">
                     <!-- Project 1 -->
                     <article class="project-card">
-                        <h3 class="project-title">Project One</h3>
-                        <p class="project-desc">A brief description of the project and the problem it solves. showcasing technical skills and design capabilities.</p>
+                        <h3 class="project-title">Phaseformer</h3>
+                        <p class="project-desc">Phase-based Attention Mechanism for Underwater Image Restoration and
+                            Beyond. Accepted at <strong>WACV 2025</strong>.</p>
                         <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js</span>
+                            <span class="tag">WACV 2025</span>
+                            <span class="tag">Underwater Imaging</span>
+                        </div>
+                        <div style="margin-top: 1rem;">
+                            <a href="https://github.com/Mdraqibkhan/Phaseformer" class="btn"
+                                style="padding: 0.5rem 1rem; font-size: 0.875rem; border: 1px solid var(--border-color);">GitHub</a>
                         </div>
                     </article>
 
                     <!-- Project 2 -->
                     <article class="project-card">
-                        <h3 class="project-title">Project Two</h3>
-                        <p class="project-desc">Another exciting project that demonstrates ability to work with APIs and complex data structures.</p>
+                        <h3 class="project-title">Spectroformer</h3>
+                        <p class="project-desc">Multi-Domain Query Cascaded Transformer Network for Underwater Image
+                            Enhancement. Published in <strong>WACV 2024</strong>.</p>
                         <div class="project-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Django</span>
+                            <span class="tag">WACV 2024</span>
+                            <span class="tag">Transformer</span>
+                        </div>
+                        <div style="margin-top: 1rem;">
+                            <a href="https://github.com/Mdraqibkhan/Spectroformer" class="btn"
+                                style="padding: 0.5rem 1rem; font-size: 0.875rem; border: 1px solid var(--border-color);">GitHub</a>
                         </div>
                     </article>
 
                     <!-- Project 3 -->
                     <article class="project-card">
-                        <h3 class="project-title">Project Three</h3>
-                        <p class="project-desc">A creative frontend experiment pushing the boundaries of CSS and browser performance.</p>
+                        <h3 class="project-title">UIEPTA</h3>
+                        <p class="project-desc">Underwater Image Enhancement with Phase Transfer and Attention.
+                            Published in <strong>IJCNN 2023</strong>.</p>
                         <div class="project-tags">
-                            <span class="tag">Three.js</span>
-                            <span class="tag">WebGL</span>
+                            <span class="tag">IJCNN 2023</span>
+                            <span class="tag">Phase Transfer</span>
+                        </div>
+                        <div style="margin-top: 1rem;">
+                            <a href="https://github.com/Mdraqibkhan/UIEPTA" class="btn"
+                                style="padding: 0.5rem 1rem; font-size: 0.875rem; border: 1px solid var(--border-color);">GitHub</a>
+                        </div>
+                    </article>
+
+                    <!-- Project 4 -->
+                    <article class="project-card">
+                        <h3 class="project-title">Cricket Analytics</h3>
+                        <p class="project-desc">AI-Based Ball and Wicket Detection with Pitch Mapping and Impact
+                            Analysis. Real-time tracking and analytics for cricket.</p>
+                        <div class="project-tags">
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">Sports Analytics</span>
                         </div>
                     </article>
                 </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="about" style="background-color: var(--bg-primary);">
+            <div class="container">
+                <h2 class="section-title">Selected Publications</h2>
+                <ul style="list-style: none; color: var(--text-secondary);">
+                    <li style="margin-bottom: 1.5rem;">
+                        <strong style="color: var(--text-primary);">Phase-based Attention Mechanism for Underwater Image
+                            Restoration and Beyond</strong><br>
+                        IEEE/CVF Winter Conference on Applications of Computer Vision (WACV 2025)
+                    </li>
+                    <li style="margin-bottom: 1.5rem;">
+                        <strong style="color: var(--text-primary);">ACFTNet: Attentive Color Fusion Transformer Network
+                            for Underwater Image Enhancement</strong><br>
+                        International Conference on Pattern Recognition (ICPR 2025)
+                    </li>
+                    <li style="margin-bottom: 1.5rem;">
+                        <strong style="color: var(--text-primary);">Spectroformer: Multi-domain query cascaded
+                            transformer network for underwater image enhancement</strong><br>
+                        IEEE/CVF Winter Conference on Applications of Computer Vision (WACV 2024)
+                    </li>
+                </ul>
             </div>
         </section>
 
@@ -115,7 +174,8 @@
                 <div class="contact-content">
                     <h2 class="section-title">Get In Touch</h2>
                     <p style="color: var(--text-secondary); margin-bottom: 2rem;">
-                        I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.
+                        I'm always open to discussing new projects, creative ideas or opportunities to be part of your
+                        visions.
                     </p>
                     <a href="mailto:hello@example.com" class="btn btn-primary">Say Hello</a>
                 </div>
@@ -131,4 +191,5 @@
 
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
