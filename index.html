@@ -62,9 +62,11 @@
         }
     </script>
     <style>
+        /* Ensure smooth scrolling works even without Tailwind's scroll-smooth utility */
         html {
             scroll-behavior: smooth;
         }
+
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #000b1c; }
         ::-webkit-scrollbar-thumb { background: #1c4f96; border-radius: 4px; }
@@ -126,8 +128,8 @@
 </head>
 <body class="bg-trinity-dark text-white font-sans overflow-x-hidden antialiased selection:bg-trinity-gold selection:text-trinity-dark">
 
-    <!-- Neural Network Canvas -->
-    <canvas id="neuralCanvas" class="fixed top-0 left-0 w-full h-full z-0 pointer-events-none opacity-40"></canvas>
+    <!-- Background Canvas -->
+    <canvas id="particleCanvas" class="fixed top-0 left-0 w-full h-full z-0 pointer-events-none opacity-40"></canvas>
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
@@ -146,6 +148,7 @@
                         <a href="#contact" class="text-sm font-medium text-trinity-gold border border-trinity-gold/30 hover:bg-trinity-gold/10 px-4 py-2 rounded-full transition-all">Contact</a>
                     </div>
                 </div>
+                <!-- Mobile menu button with ARIA attributes -->
                 <div class="-mr-2 flex md:hidden">
                     <button type="button" 
                             class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-white/10 focus:outline-none" 
@@ -196,17 +199,29 @@
                             <i class="fab fa-linkedin text-[#0077b5] text-xl"></i>
                             <span class="font-medium">LinkedIn</span>
                         </a>
-                        <a href="https://github.com/Mdraqibkhan" target="_blank" class="group flex items-center gap-3 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all">
-                            <i class="fab fa-github text-white text-xl"></i>
-                            <span class="font-medium">GitHub</span>
-                        </a>
+                    </div>
+                    
+                    <!-- Supervisors -->
+                    <div class="pt-6 border-t border-white/10">
+                        <p class="text-xs font-mono text-gray-500 uppercase tracking-wider mb-3">Supervisors</p>
+                        <div class="flex flex-wrap gap-4 text-sm">
+                            <a href="https://www.scss.tcd.ie/~muralas/" target="_blank" class="supervisor-link text-gray-300 hover:text-trinity-gold">Subrahmanyam Murala (TCD)</a>
+                            <span class="text-gray-600">•</span>
+                            <a href="https://www.universityofgalway.ie/science-engineering/staff-profiles/petercorcoran/" target="_blank" class="supervisor-link text-gray-300 hover:text-trinity-gold">Peter Corcoran (UoG)</a>
+                            <span class="text-gray-600">•</span>
+                            <a href="https://www.tcd.ie/scss/people/academic-staff/osullica/" target="_blank" class="supervisor-link text-gray-300 hover:text-trinity-gold">Carol O’Sullivan (TCD)</a>
+                        </div>
                     </div>
                 </div>
+            
 
                 <!-- Profile Photo Section -->
                 <div class="lg:col-span-2 hidden lg:block opacity-0 animate-fade-in-up" style="animation-delay: 0.4s;">
                     <div class="relative w-full max-w-md mx-auto">
+                        <!-- Ambient Glow -->
                         <div class="absolute inset-0 bg-gradient-to-tr from-trinity-gold to-trinity-blue rounded-full blur-3xl opacity-20 animate-pulse-slow"></div>
+                        
+                        <!-- Photo Card -->
                         <div class="relative glass-panel rounded-3xl p-3 transform hover:scale-[1.02] transition-transform duration-500 rotate-2 hover:rotate-0">
                             <div class="relative rounded-2xl overflow-hidden border border-white/5 bg-trinity-dark/50">
                                 <img 
@@ -215,6 +230,7 @@
                                     class="w-full h-96 object-cover object-top profile-img-mask"
                                     onerror="this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-96 text-gray-500\'>Image loading...</div>'"
                                 >
+                                <!-- Overlaid Info Badge -->
                                 <div class="absolute bottom-4 left-4 right-4 glass-panel p-3 rounded-xl border-l-4 border-trinity-gold">
                                     <div class="flex justify-between items-center">
                                         <div>
@@ -230,33 +246,33 @@
                 </div>
             </div>
 
-            <!-- Supervision Team (photos only, text links removed) -->
-            <div class="relative z-10 w-full mt-12 mb-8">
-                <p class="text-xs font-mono text-gray-500 uppercase tracking-wider mb-6 text-center">Supervision Team</p>
-                <div class="flex flex-wrap justify-center gap-6">
-                    <a href="https://www.scss.tcd.ie/~muralas/" target="_blank" class="group text-center w-32">
-                        <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border-2 border-white/10 group-hover:border-trinity-gold transition-all duration-300">
-                            <img src="https://www.scss.tcd.ie/~muralas/wp-content/uploads/2023/07/murala.png" alt="Subrahmanyam Murala" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
-                        </div>
-                        <p class="text-xs font-bold text-white mt-3 group-hover:text-trinity-gold transition-colors">Subrahmanyam Murala</p>
-                        <p class="text-[10px] text-gray-500 font-mono uppercase">TCD</p>
-                    </a>
-                    <a href="https://www.universityofgalway.ie/science-engineering/staff-profiles/petercorcoran/" target="_blank" class="group text-center w-32">
-                        <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border-2 border-white/10 group-hover:border-trinity-gold transition-all duration-300">
-                            <img src="https://www.universityofgalway.ie/media/researchsub-sites/c3i/images/Peter_320x320.jpg" alt="Peter Corcoran" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
-                        </div>
-                        <p class="text-xs font-bold text-white mt-3 group-hover:text-trinity-gold transition-colors">Peter Corcoran</p>
-                        <p class="text-[10px] text-gray-500 font-mono uppercase">UoG</p>
-                    </a>
-                    <a href="https://www.tcd.ie/scss/people/academic-staff/osullica/" target="_blank" class="group text-center w-32">
-                        <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border-2 border-white/10 group-hover:border-trinity-gold transition-all duration-300">
-                            <img src="https://pxl-tcdie.terminalfour.net/fit-in/320x320/filters:no_upscale()/filters:format(webp)/filters:quality(100)/prod01/channel_3/media/tcd/scss/headshots/ed70972c-9a09-4560-96e5-42c71860bb59.jpg" alt="Carol O'Sullivan" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 80 80%22%3E%3Crect width=%2280%22 height=%2280%22 fill=%22%23001f5c%22/%3E%3Ctext x=%2225%22 y=%2250%22 fill=%22white%22 font-size=%2220%22%3ECO%3C/text%3E%3C/svg%3E';this.onerror=null;">
-                        </div>
-                        <p class="text-xs font-bold text-white mt-3 group-hover:text-trinity-gold transition-colors">Carol O’Sullivan</p>
-                        <p class="text-[10px] text-gray-500 font-mono uppercase">TCD</p>
-                    </a>
+            <!-- Supervisor Photos -->
+            <div class="relative z-10 w-full flex flex-wrap justify-center gap-6 mt-12 mb-8">
+              <a href="https://www.scss.tcd.ie/~muralas/" target="_blank" class="group text-center w-32">
+                <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border-2 border-white/10 group-hover:border-trinity-gold transition-all duration-300">
+                  <img src="https://www.scss.tcd.ie/~muralas/wp-content/uploads/2023/07/murala.png" alt="Subrahmanyam Murala" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
                 </div>
-            </div>
+                <p class="text-xs font-bold text-white mt-3 group-hover:text-trinity-gold transition-colors">Subrahmanyam Murala</p>
+                <p class="text-[10px] text-gray-500 font-mono uppercase">TCD</p>
+              </a>
+            
+              <a href="https://www.universityofgalway.ie/science-engineering/staff-profiles/petercorcoran/" target="_blank" class="group text-center w-32">
+                <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border-2 border-white/10 group-hover:border-trinity-gold transition-all duration-300">
+                  <img src="https://www.universityofgalway.ie/media/researchsub-sites/c3i/images/Peter_320x320.jpg" alt="Peter Corcoran" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                </div>
+                <p class="text-xs font-bold text-white mt-3 group-hover:text-trinity-gold transition-colors">Peter Corcoran</p>
+                <p class="text-[10px] text-gray-500 font-mono uppercase">UoG</p>
+              </a>
+            
+              <a href="https://www.tcd.ie/scss/people/academic-staff/osullica/" target="_blank" class="group text-center w-32">
+                <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border-2 border-white/10 group-hover:border-trinity-gold transition-all duration-300">
+                  <img src="https://pxl-tcdie.terminalfour.net/fit-in/320x320/filters:no_upscale()/filters:format(webp)/filters:quality(100)/prod01/channel_3/media/tcd/scss/headshots/ed70972c-9a09-4560-96e5-42c71860bb59.jpg" alt="Carol O'Sullivan" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 80 80%22%3E%3Crect width=%2280%22 height=%2280%22 fill=%22%23001f5c%22/%3E%3Ctext x=%2225%22 y=%2250%22 fill=%22white%22 font-size=%2220%22%3ECO%3C/text%3E%3C/svg%3E';this.onerror=null;">
+                </div>
+                <p class="text-xs font-bold text-white mt-3 group-hover:text-trinity-gold transition-colors">Carol O’Sullivan</p>
+                <p class="text-[10px] text-gray-500 font-mono uppercase">TCD</p>
+              </a>
+            </div>   
+          
         </div>
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
             <span class="text-xs font-mono tracking-widest">SCROLL</span>
@@ -343,26 +359,23 @@
     <!-- Publications -->
     <section id="publications" class="py-24 relative z-10 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Stats strip (UPDATE NUMBERS) -->
+            <!-- Stats strip (YOUR REAL DATA) -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
               <div class="glass-panel p-8 rounded-2xl text-center card-hover">
                 <div class="text-5xl font-bold text-trinity-gold mb-2">
-                  <!-- TODO: Replace 156 with your real citation count -->
-                  <span class="counter" data-target="156">0</span>
+                  <span class="counter" data-target="268">0</span>
                 </div>
                 <div class="text-sm text-gray-400 uppercase tracking-wider">Citations</div>
               </div>
               <div class="glass-panel p-8 rounded-2xl text-center card-hover">
                 <div class="text-5xl font-bold text-trinity-gold mb-2">
-                  <!-- TODO: Replace 8 with your real publication count -->
-                  <span class="counter" data-target="8">0</span>
+                  <span class="counter" data-target="10">0</span>
                 </div>
                 <div class="text-sm text-gray-400 uppercase tracking-wider">Publications</div>
               </div>
               <div class="glass-panel p-8 rounded-2xl text-center card-hover">
                 <div class="text-5xl font-bold text-trinity-gold mb-2">
-                  <!-- TODO: Replace 5 with your real h-index -->
-                  <span class="counter" data-target="5">0</span>
+                  <span class="counter" data-target="6">0</span>
                 </div>
                 <div class="text-sm text-gray-400 uppercase tracking-wider">h-index</div>
               </div>
@@ -378,34 +391,234 @@
                 </a>
             </div>
 
-            <!-- Publication cards: Replace with your actual papers -->
+            <!-- REAL PUBLICATION LIST -->
             <div class="space-y-4" id="pub-list">
-                <!-- Paper 1 (replace with real data) -->
+                <!-- Paper: NTIRE 2026 Challenge on Efficient Burst HDR -->
                 <div class="group relative glass-panel p-1 rounded-xl overflow-hidden hover:border-trinity-gold/50 transition-all duration-300">
                     <div class="absolute inset-0 bg-gradient-to-r from-trinity-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative bg-trinity-dark p-6 rounded-lg border border-white/5">
                         <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
                             <div class="flex-1">
                                 <div class="flex items-center flex-wrap gap-3 mb-2">
-                                    <!-- TODO: Update year and venue -->
-                                    <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2024</span>
-                                    <span class="text-xs text-gray-500 font-mono">CVPR</span>
+                                    <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2026</span>
+                                    <span class="text-xs text-gray-500 font-mono">CVPR Workshop</span>
+                                    <span class="text-xs text-trinity-gold font-mono">19 citations</span>
                                 </div>
-                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Real-Time Stereo Matching via Lightweight Cost Aggregation</h3>
-                                <p class="text-gray-400 text-sm mb-4">Md Raqib Khan, Subrahmanyam Murala, Peter Corcoran</p>
+                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">NTIRE 2026 Challenge on Efficient Burst HDR and Restoration: Datasets, Methods, and Results</h3>
+                                <p class="text-gray-400 text-sm mb-4">H. Park, E. Park, S. Lee, R. Timofte, <strong>Md Raqib Khan</strong> (et al.)</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#StereoMatching</span>
-                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#DepthEstimation</span>
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#HDR</span>
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#ImageRestoration</span>
                                 </div>
                             </div>
-                            <a href="#" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
+                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Paper 2 (replace) -->
+
+                <!-- Efficient Low Light Image Enhancement -->
+                <div class="group relative glass-panel p-1 rounded-xl overflow-hidden hover:border-trinity-gold/50 transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-r from-trinity-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative bg-trinity-dark p-6 rounded-lg border border-white/5">
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                            <div class="flex-1">
+                                <div class="flex items-center flex-wrap gap-3 mb-2">
+                                    <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2026</span>
+                                    <span class="text-xs text-gray-500 font-mono">CVPR Workshop</span>
+                                    <span class="text-xs text-trinity-gold font-mono">18 citations</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Efficient Low Light Image Enhancement: NTIRE 2026 Challenge Report</h3>
+                                <p class="text-gray-400 text-sm mb-4">J. Yan, C. Tu, Q. Lin, Z. Wu, ..., <strong>Md Raqib Khan</strong> (et al.)</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#LowLight</span>
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#Enhancement</span>
+                                </div>
+                            </div>
+                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inclusive STEAM education (ACRT Journal) -->
+                <div class="group relative glass-panel p-1 rounded-xl overflow-hidden hover:border-trinity-gold/50 transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-r from-trinity-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative bg-trinity-dark p-6 rounded-lg border border-white/5">
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                            <div class="flex-1">
+                                <div class="flex items-center flex-wrap gap-3 mb-2">
+                                    <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2026</span>
+                                    <span class="text-xs text-gray-500 font-mono">ACRT Journal</span>
+                                    <span class="text-xs text-trinity-gold font-mono">2 citations</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Inclusive STEAM Education: A Framework for Teaching Coding and Robotics to Students with Visual Impairment Using Advanced Computer Vision</h3>
+                                <p class="text-gray-400 text-sm mb-4">M. Hamash, <strong>Md Raqib Khan</strong>, P. Tiernan</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#EdTech</span>
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#ComputerVision</span>
+                                </div>
+                            </div>
+                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phaseformer -->
+                <div class="group relative glass-panel p-1 rounded-xl overflow-hidden hover:border-trinity-gold/50 transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-r from-trinity-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative bg-trinity-dark p-6 rounded-lg border border-white/5">
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                            <div class="flex-1">
+                                <div class="flex items-center flex-wrap gap-3 mb-2">
+                                    <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2025</span>
+                                    <span class="text-xs text-gray-500 font-mono">WACV</span>
+                                    <span class="text-xs text-trinity-gold font-mono">38 citations</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Phaseformer: Phase-based Attention Mechanism for Underwater Image Restoration and Beyond</h3>
+                                <p class="text-gray-400 text-sm mb-4"><strong>Md Raqib Khan</strong>, A. Negi, A. Kulkarni, S.S. Phutke, S.K. Vipparthi, S. Murala</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#Underwater</span>
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#ImageRestoration</span>
+                                </div>
+                            </div>
+                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inclusive STEAM education (arXiv) -->
+                <div class="group relative glass-panel p-1 rounded-xl overflow-hidden hover:border-trinity-gold/50 transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-r from-trinity-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative bg-trinity-dark p-6 rounded-lg border border-white/5">
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                            <div class="flex-1">
+                                <div class="flex items-center flex-wrap gap-3 mb-2">
+                                    <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2025</span>
+                                    <span class="text-xs text-gray-500 font-mono">arXiv</span>
+                                    <span class="text-xs text-trinity-gold font-mono">4 citations</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Inclusive STEAM Education: A Framework for Teaching Coding and Robotics to Students with Visual Impairment Using Advanced Computer Vision</h3>
+                                <p class="text-gray-400 text-sm mb-4">M. Hamash, <strong>Md Raqib Khan</strong>, P. Tiernan</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#EdTech</span>
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#Accessibility</span>
+                                </div>
+                            </div>
+                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TransWaveNet -->
+                <div class="group relative glass-panel p-1 rounded-xl overflow-hidden hover:border-trinity-gold/50 transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-r from-trinity-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative bg-trinity-dark p-6 rounded-lg border border-white/5">
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                            <div class="flex-1">
+                                <div class="flex items-center flex-wrap gap-3 mb-2">
+                                    <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2025</span>
+                                    <span class="text-xs text-gray-500 font-mono">IEEE TAI</span>
+                                    <span class="text-xs text-trinity-gold font-mono">–</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">TransWaveNet: Transformer for Underwater Image Restoration with Wavelets</h3>
+                                <p class="text-gray-400 text-sm mb-4">P. Mishra, <strong>Md Raqib Khan</strong>, S.S. Phutke, S.K. Vipparthi, S. Murala</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#Transformers</span>
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#Wavelets</span>
+                                </div>
+                            </div>
+                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spectroformer -->
+                <div class="group relative glass-panel p-1 rounded-xl overflow-hidden hover:border-trinity-gold/50 transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-r from-trinity-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative bg-trinity-dark p-6 rounded-lg border border-white/5">
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                            <div class="flex-1">
+                                <div class="flex items-center flex-wrap gap-3 mb-2">
+                                    <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2024</span>
+                                    <span class="text-xs text-gray-500 font-mono">WACV</span>
+                                    <span class="text-xs text-trinity-gold font-mono">69 citations</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Spectroformer: Multi-domain Query Cascaded Transformer Network for Underwater Image Enhancement</h3>
+                                <p class="text-gray-400 text-sm mb-4"><strong>Md Raqib Khan</strong>, P. Mishra, N. Mehta, S.S. Phutke, S.K. Vipparthi, S. Nandi, S. Murala</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#Underwater</span>
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#Transformer</span>
+                                </div>
+                            </div>
+                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NTIRE 2024 Image Shadow Removal -->
+                <div class="group relative glass-panel p-1 rounded-xl overflow-hidden hover:border-trinity-gold/50 transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-r from-trinity-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative bg-trinity-dark p-6 rounded-lg border border-white/5">
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                            <div class="flex-1">
+                                <div class="flex items-center flex-wrap gap-3 mb-2">
+                                    <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2024</span>
+                                    <span class="text-xs text-gray-500 font-mono">CVPR Workshop</span>
+                                    <span class="text-xs text-trinity-gold font-mono">104 citations</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">NTIRE 2024 Image Shadow Removal Challenge Report</h3>
+                                <p class="text-gray-400 text-sm mb-4">F.A. Vasluianu, T. Seizinger, Z. Zhou, ..., <strong>Md Raqib Khan</strong> (et al.)</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#ShadowRemoval</span>
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#Restoration</span>
+                                </div>
+                            </div>
+                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Attentive Color Fusion -->
+                <div class="group relative glass-panel p-1 rounded-xl overflow-hidden hover:border-trinity-gold/50 transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-r from-trinity-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative bg-trinity-dark p-6 rounded-lg border border-white/5">
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                            <div class="flex-1">
+                                <div class="flex items-center flex-wrap gap-3 mb-2">
+                                    <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2024</span>
+                                    <span class="text-xs text-gray-500 font-mono">ICPR</span>
+                                    <span class="text-xs text-trinity-gold font-mono">–</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Attentive Color Fusion Transformer Network (ACFTNet) for Underwater Image Enhancement</h3>
+                                <p class="text-gray-400 text-sm mb-4">M.U. Wani, <strong>Md Raqib Khan</strong>, A. Kulkarni, S.S. Phutke, S.K. Vipparthi, S. Murala</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#Underwater</span>
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#Fusion</span>
+                                </div>
+                            </div>
+                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- IJCNN 2023 -->
                 <div class="group relative glass-panel p-1 rounded-xl overflow-hidden hover:border-trinity-gold/50 transition-all duration-300">
                     <div class="absolute inset-0 bg-gradient-to-r from-trinity-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative bg-trinity-dark p-6 rounded-lg border border-white/5">
@@ -413,16 +626,17 @@
                             <div class="flex-1">
                                 <div class="flex items-center flex-wrap gap-3 mb-2">
                                     <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2023</span>
-                                    <span class="text-xs text-gray-500 font-mono">ICRA</span>
+                                    <span class="text-xs text-gray-500 font-mono">IJCNN</span>
+                                    <span class="text-xs text-trinity-gold font-mono">14 citations</span>
                                 </div>
-                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Efficient Depth Refinement for Robotic Vision</h3>
-                                <p class="text-gray-400 text-sm mb-4">Md Raqib Khan, Peter Corcoran, Carol O'Sullivan</p>
+                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Underwater Image Enhancement with Phase Transfer and Attention</h3>
+                                <p class="text-gray-400 text-sm mb-4"><strong>Md Raqib Khan</strong>, A. Kulkarni, S.S. Phutke, S. Murala</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#Robotics</span>
-                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#EfficientDL</span>
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#Underwater</span>
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#Attention</span>
                                 </div>
                             </div>
-                            <a href="#" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
+                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
@@ -431,7 +645,7 @@
             </div>
             
             <div class="mt-8 p-4 rounded-lg bg-blue-900/20 border border-blue-500/20 text-center">
-                <p class="text-sm text-gray-400">Update the paper cards above with your real publications from <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" class="text-trinity-gold underline">Google Scholar</a>.</p>
+                <p class="text-sm text-gray-400">Data sourced from <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" class="text-trinity-gold underline">Google Scholar</a>. Last updated 2026‑05‑22.</p>
             </div>
         </div>
     </section>
@@ -450,9 +664,6 @@
                 </a>
                 <a href="https://www.linkedin.com/in/md-raqib-khan/" target="_blank" class="w-12 h-12 rounded-full bg-white/5 hover:bg-[#0077b5] flex items-center justify-center text-xl transition-all duration-300">
                     <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/Mdraqibkhan" target="_blank" class="w-12 h-12 rounded-full bg-white/5 hover:bg-white hover:text-black flex items-center justify-center text-xl transition-all duration-300">
-                    <i class="fab fa-github"></i>
                 </a>
                 <a href="mailto:khanmd@tcd.ie" class="w-12 h-12 rounded-full bg-white/5 hover:bg-white hover:text-trinity-dark flex items-center justify-center text-xl transition-all duration-300">
                     <i class="fas fa-envelope"></i>
@@ -476,84 +687,69 @@
             button.setAttribute('aria-expanded', !expanded);
         }
 
-        // Neural Network Background
-        (function() {
-            const canvas = document.getElementById('neuralCanvas');
-            const ctx = canvas.getContext('2d');
-            let width, height;
-            const nodes = [];
-            const maxNodes = 60;
-            const connectionDist = 150;
-            const particleSpeed = 0.3;
+        // 1. Particle Background
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
 
-            function resize() {
-                width = canvas.width = window.innerWidth;
-                height = canvas.height = window.innerHeight;
-                initNodes();
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.size = Math.random() * 2 + 1;
             }
-            window.addEventListener('resize', resize);
-
-            class Node {
-                constructor() {
-                    this.x = Math.random() * width;
-                    this.y = Math.random() * height;
-                    this.vx = (Math.random() - 0.5) * particleSpeed;
-                    this.vy = (Math.random() - 0.5) * particleSpeed;
-                    this.radius = Math.random() * 2 + 1.5;
-                }
-                update() {
-                    this.x += this.vx;
-                    this.y += this.vy;
-                    if (this.x < 0 || this.x > width) this.vx *= -1;
-                    if (this.y < 0 || this.y > height) this.vy *= -1;
-                }
-                draw() {
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                    ctx.fillStyle = 'rgba(197, 160, 89, 0.8)';
-                    ctx.fill();
-                }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
             }
-
-            function initNodes() {
-                nodes.length = 0;
-                for (let i = 0; i < maxNodes; i++) {
-                    nodes.push(new Node());
-                }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(197, 160, 89, 0.5)';
+                ctx.fill();
             }
+        }
 
-            function animate() {
-                ctx.clearRect(0, 0, width, height);
-                // Update and draw nodes
-                nodes.forEach(node => {
-                    node.update();
-                    node.draw();
-                });
-                // Draw connections
-                for (let i = 0; i < nodes.length; i++) {
-                    for (let j = i + 1; j < nodes.length; j++) {
-                        const dx = nodes[i].x - nodes[j].x;
-                        const dy = nodes[i].y - nodes[j].y;
-                        const dist = Math.sqrt(dx * dx + dy * dy);
-                        if (dist < connectionDist) {
-                            ctx.beginPath();
-                            ctx.moveTo(nodes[i].x, nodes[i].y);
-                            ctx.lineTo(nodes[j].x, nodes[j].y);
-                            const opacity = 1 - dist / connectionDist;
-                            ctx.strokeStyle = `rgba(28, 79, 150, ${opacity * 0.3})`;
-                            ctx.lineWidth = 1;
-                            ctx.stroke();
-                        }
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < 80; i++) particles.push(new Particle());
+        }
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+                for (let j = i; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 150) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(100, 100, 100, ${0.1 - distance/1500})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
                     }
                 }
-                requestAnimationFrame(animate);
             }
+            requestAnimationFrame(animateParticles);
+        }
+        initParticles();
+        animateParticles();
 
-            resize();
-            animate();
-        })();
-
-        // Typewriter Effect
+        // 2. Typewriter Effect
         const textToType = "Stereo Matching | Depth Estimation | 3D Vision";
         const typeWriterElement = document.getElementById('typewriter');
         let charIndex = 0;
@@ -568,13 +764,14 @@
         }
         setTimeout(typeWriter, 1000);
 
-        // Terminal Animation (same as before)
+        // 3. Terminal Animation
         const consoleOutput = document.getElementById('console-output');
         const commands = [
             { prompt: 'raqib@tcd-depth-lab:~$ ', cmd: "cat research_focus.md", output: "Stereo Matching & Depth Estimation\n> Real-time 3D Reconstruction\n> Autonomous Driving Perception\n> AR/VR Scene Understanding" },
-            { prompt: 'raqib@tcd-depth-lab:~$ ', cmd: "ls supervision_team/", output: "muralas/  petercorcoran/  osullica/" },
+            { prompt: 'raqib@tcd-depth-lab:~$ ', cmd: "ls supervisors/", output: "muralas/  petercorcoran/  osullica/" },
             { prompt: 'raqib@tcd-depth-lab:~$ ', cmd: "python status.py", output: "Loading TCD profile...\nStatus: Seeking collaborations in 3D Vision\nLocation: Dublin, Ireland" }
         ];
+
         let cmdIdx = 0;
         function runCmd() {
             if (cmdIdx >= commands.length) return;
@@ -582,6 +779,7 @@
             const line = document.createElement('div');
             line.innerHTML = `<span class="text-green-500">${c.prompt}</span><span class="text-white">${c.cmd}</span>`;
             consoleOutput.appendChild(line);
+            
             setTimeout(() => {
                 const out = document.createElement('div');
                 out.className = "text-gray-400 mb-4 pl-4 border-l-2 border-gray-700 whitespace-pre-line";
@@ -592,6 +790,7 @@
                 setTimeout(runCmd, 1500);
             }, 1000);
         }
+        
         const termObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && !consoleOutput.classList.contains('started')) {
@@ -603,7 +802,7 @@
         }, { threshold: 0.5 });
         termObserver.observe(consoleOutput);
 
-        // Sticky Nav
+        // 4. Sticky Nav
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
@@ -613,7 +812,7 @@
             }
         });
 
-        // Counter Animation
+        // 5. Counter Animation (Your real stats: 268 citations, 10 publications, 6 h-index)
         const counterObserver = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -621,6 +820,7 @@
                     const target = parseInt(el.getAttribute('data-target'));
                     const duration = 2000;
                     const start = performance.now();
+                    
                     const updateCount = (now) => {
                         const elapsed = now - start;
                         const progress = Math.min(elapsed / duration, 1);
@@ -629,11 +829,13 @@
                         if (progress < 1) requestAnimationFrame(updateCount);
                         else el.innerText = target;
                     };
+                    
                     requestAnimationFrame(updateCount);
                     observer.unobserve(el);
                 }
             });
         }, { threshold: 0.5 });
+
         document.querySelectorAll('.counter').forEach(c => counterObserver.observe(c));
     </script>
 </body>
