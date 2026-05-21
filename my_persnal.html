@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Raqib Khan | PhD Student</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        trinity: {
+                            blue: '#001f5c',
+                            dark: '#000b1c',
+                            light: '#1c4f96',
+                            gold: '#c5a059',
+                            silver: '#a0aec0'
+                        }
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'typewriter': 'typewriter 2s steps(40) 1s 1 normal both',
+                        'cursor': 'cursor .75s step-end infinite'
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #000b1c;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1c4f96;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c5a059;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .parallax-bg {
+            background-image: radial-gradient(circle at 50% 50%, #1c4f96 0%, #000b1c 70%);
+        }
+
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #c5a059, #ffffff, #c5a059);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% auto;
+            animation: shine 3s linear infinite;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px -10px rgba(28, 79, 150, 0.3);
+        }
+
+        /* Glitch effect for headers */
+        .glitch {
+            position: relative;
+        }
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000b1c;
+        }
+        .glitch::before {
+            left: 2px;
+            text-shadow: -1px 0 red;
+            clip: rect(24px, 550px, 90px, 0);
+            animation: glitch-anim 3s infinite linear alternate-reverse;
+        }
+        .glitch::after {
+            left: -2px;
+            text-shadow: -1px 0 blue;
+            clip: rect(85px, 550px, 140px, 0);
+            animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
+        }
+    </style>
+</head>
+<body class="bg-trinity-dark text-white font-sans overflow-x-hidden antialiased selection:bg-trinity-gold selection:text-trinity-dark">
+
+    <!-- Canvas Background -->
+    <canvas id="particleCanvas" class="fixed top-0 left-0 w-full h-full z-0 pointer-events-none opacity-40"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-serif font-bold tracking-tighter text-white hover:text-trinity-gold transition-colors">
+                        RA<span class="text-trinity-gold">QIB</span>.
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="text-sm font-medium text-gray-300 hover:text-white px-3 py-2 transition-colors">About</a>
+                        <a href="#publications" class="text-sm font-medium text-gray-300 hover:text-white px-3 py-2 transition-colors">Publications</a>
+                        <a href="#research" class="text-sm font-medium text-gray-300 hover:text-white px-3 py-2 transition-colors">Research</a>
+                        <a href="#contact" class="text-sm font-medium text-trinity-gold border border-trinity-gold/30 hover:bg-trinity-gold/10 px-4 py-2 rounded-full transition-all">Get in Touch</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-white/10 focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass-panel">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white/10">About</a>
+                <a href="#publications" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white/10">Publications</a>
+                <a href="#research" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white/10">Research</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium text-trinity-gold">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8 opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <div>
+                        <p class="text-trinity-gold font-mono text-sm tracking-widest mb-4 uppercase">PhD Student & Researcher</p>
+                        <h1 class="text-5xl md:text-7xl font-serif font-bold leading-tight">
+                            Md Raqib <span class="gradient-text">Khan</span>
+                        </h1>
+                        <div class="h-12 mt-4">
+                            <span id="typewriter" class="text-xl md:text-2xl text-gray-300 font-mono typing-cursor"></span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-lg leading-relaxed max-w-lg">
+                        Pushing the boundaries of machine learning and computational science at Trinity College Dublin. Exploring novel architectures and real-world applications.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://scholar.google.com/citations?user=RdE9ayMAAAAJ&hl=en" target="_blank" class="group flex items-center gap-3 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all">
+                            <i class="fas fa-graduation-cap text-trinity-gold text-xl"></i>
+                            <span class="font-medium">Google Scholar</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/md-raqib-khan/" target="_blank" class="group flex items-center gap-3 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all">
+                            <i class="fab fa-linkedin text-[#0077b5] text-xl"></i>
+                            <span class="font-medium">LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="relative hidden lg:block opacity-0 animate-fade-in-up" style="animation-delay: 0.4s;">
+                    <!-- Abstract 3D-ish Representation / Bio Picture Placeholder -->
+                    <div class="relative w-full aspect-square max-w-md mx-auto">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-trinity-blue to-transparent rounded-full blur-3xl opacity-30 animate-pulse"></div>
+                        <div class="glass-panel rounded-3xl p-2 transform hover:scale-[1.02] transition-transform duration-500 rotate-3 hover:rotate-0">
+                            <div class="bg-trinity-dark/80 rounded-2xl overflow-hidden border border-white/5">
+                                <img src="https://user-images.githubusercontent.com/58645688/262223467-721b3da1-4d6c-4f52-8e9a-24b1e741a50e.png" alt="Profile" class="w-full h-96 object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                                <div class="p-6">
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <p class="text-trinity-gold font-mono text-xs">STATUS</p>
+                                            <p class="text-white text-sm font-semibold">Active Research</p>
+                                        </div>
+                                        <div class="w-3 h-3 bg-green-500 rounded-full shadow-[0_0_10px_rgba(34,197,94,0.6)] animate-pulse"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Badge -->
+                        <div class="absolute -bottom-6 -left-6 glass-panel p-4 rounded-xl border-l-4 border-trinity-gold animate-bounce">
+                            <p class="text-xs text-gray-400">Affiliation</p>
+                            <p class="font-serif font-bold text-white">Trinity College Dublin</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
+            <span class="text-xs font-mono tracking-widest">SCROLL</span>
+            <div class="w-px h-12 bg-gradient-to-b from-white to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- Terminal / Skills Section -->
+    <section id="about" class="py-20 bg-trinity-dark relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold">Technical Toolkit</h2>
+                    <p class="text-gray-400 leading-relaxed">
+                        My research spans across multiple domains of computer science. I combine theoretical foundations with implementation skills to build scalable solutions.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 rounded-lg bg-white/5 border border-white/10 hover:border-trinity-gold/50 transition-colors">
+                            <i class="fas fa-brain text-trinity-gold text-2xl mb-2"></i>
+                            <h3 class="font-bold">Deep Learning</h3>
+                            <p class="text-xs text-gray-400 mt-1">PyTorch, TensorFlow, CUDA</p>
+                        </div>
+                        <div class="p-4 rounded-lg bg-white/5 border border-white/10 hover:border-trinity-gold/50 transition-colors">
+                            <i class="fas fa-database text-trinity-gold text-2xl mb-2"></i>
+                            <h3 class="font-bold">Big Data</h3>
+                            <p class="text-xs text-gray-400 mt-1">Spark, Hadoop, SQL</p>
+                        </div>
+                        <div class="p-4 rounded-lg bg-white/5 border border-white/10 hover:border-trinity-gold/50 transition-colors">
+                            <i class="fas fa-code text-trinity-gold text-2xl mb-2"></i>
+                            <h3 class="font-bold">Software</h3>
+                            <p class="text-xs text-gray-400 mt-1">Python, C++, Rust</p>
+                        </div>
+                        <div class="p-4 rounded-lg bg-white/5 border border-white/10 hover:border-trinity-gold/50 transition-colors">
+                            <i class="fas fa-globe text-trinity-gold text-2xl mb-2"></i>
+                            <h3 class="font-bold">Web</h3>
+                            <p class="text-xs text-gray-400 mt-1">Flask, React, FastAPI</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Interactive Console -->
+                <div class="w-full max-w-2xl mx-auto glass-panel rounded-xl overflow-hidden shadow-2xl border border-gray-800">
+                    <div class="bg-gray-900/50 px-4 py-2 flex items-center gap-2 border-b border-gray-700">
+                        <div class="flex gap-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <div class="flex-1 text-center text-xs font-mono text-gray-500">raqib@trinity-research: ~/about</div>
+                    </div>
+                    <div class="p-6 font-mono text-sm h-80 overflow-y-auto bg-black/80 text-gray-300" id="console-output">
+                        <!-- JS will populate this -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications / Google Scholar Integration -->
+    <section id="publications" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-trinity-gold font-mono text-sm tracking-widest uppercase">Scholarly Impact</span>
+                <h2 class="mt-2 text-3xl md:text-5xl font-serif font-bold">Selected Research</h2>
+            </div>
+            
+            <!-- Metrics Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+                <div class="glass-panel p-8 rounded-2xl text-center card-hover">
+                    <div class="text-trinity-gold text-4xl font-bold mb-2 counter" data-target="150">0</div>
+                    <div class="text-sm text-gray-400 uppercase tracking-wider">Citations</div>
+                </div>
+                <div class="glass-panel p-8 rounded-2xl text-center card-hover">
+                    <div class="text-trinity-gold text-4xl font-bold mb-2 counter" data-target="12">0</div>
+                    <div class="text-sm text-gray-400 uppercase tracking-wider">Publications</div>
+                </div>
+                <div class="glass-panel p-8 rounded-2xl text-center card-hover">
+                    <div class="text-trinity-gold text-4xl font-bold mb-2">h-index</div>
+                    <div class="text-sm text-gray-400 uppercase tracking-wider">Impact</div>
+                </div>
+            </div>
+
+            <!-- Paper Cards (Dynamic Placeholder for actual data) -->
+            <div class="space-y-6">
+                <!-- Paper 1 -->
+                <div class="group relative glass-panel p-1 rounded-xl overflow-hidden hover:border-trinity-gold/50 transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-r from-trinity-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative bg-trinity-dark p-6 rounded-lg border border-white/5">
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                            <div>
+                                <div class="flex items-center gap-3 mb-2">
+                                    <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2023</span>
+                                    <span class="text-xs text-gray-500 font-mono">CONF_NAME</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Advanced Neural Architectures for Sequential Data Processing</h3>
+                                <p class="text-gray-400 text-sm mb-4">A novel approach to handling long-form sequential dependencies in transformer models with enhanced attention mechanisms.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#Transformer</span>
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#DeepLearning</span>
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#NLP</span>
+                                </div>
+                            </div>
+                            <a href="https://scholar.google.com/citations?user=RdE9ayMAAAAJ&hl=en" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Paper 2 -->
+                 <div class="group relative glass-panel p-1 rounded-xl overflow-hidden hover:border-trinity-gold/50 transition-all duration-300">
+                    <div class="absolute inset-0 bg-gradient-to-r from-trinity-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div class="relative bg-trinity-dark p-6 rounded-lg border border-white/5">
+                        <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                            <div>
+                                <div class="flex items-center gap-3 mb-2">
+                                    <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2022</span>
+                                    <span class="text-xs text-gray-500 font-mono">JOURNAL_NAME</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Optimizing Computational Resources in Distributed Edge Computing</h3>
+                                <p class="text-gray-400 text-sm mb-4">An algorithmic framework for resource allocation in heterogeneous IoT environments.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#EdgeAI</span>
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#Optimization</span>
+                                </div>
+                            </div>
+                            <a href="https://scholar.google.com/citations?user=RdE9ayMAAAAJ&hl=en" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="https://scholar.google.com/citations?user=RdE9ayMAAAAJ&hl=en" target="_blank" class="inline-flex items-center gap-2 text-trinity-gold hover:text-white transition-colors border-b border-trinity-gold/50 pb-1">
+                    <span>View Full Google Scholar Profile</span>
+                    <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Interests Visual -->
+    <section id="research" class="py-20 bg-trinity-dark relative overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-trinity-blue/20 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="space-y-4 mt-8">
+                             <div class="glass-panel p-6 rounded-2xl transform -rotate-3 hover:rotate-0 transition-all duration-500">
+                                <i class="fas fa-network-wired text-3xl text-blue-400 mb-4"></i>
+                                <h4 class="font-bold">Deep Graph Learning</h4>
+                                <p class="text-xs text-gray-400 mt-2">Exploring GNNs for social and molecular data.</p>
+                            </div>
+                            <div class="glass-panel p-6 rounded-2xl transform rotate-2 hover:rotate-0 transition-all duration-500">
+                                <i class="fas fa-eye text-3xl text-purple-400 mb-4"></i>
+                                <h4 class="font-bold">Computer Vision</h4>
+                                <p class="text-xs text-gray-400 mt-2">Medical imaging and autonomous systems.</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="glass-panel p-6 rounded-2xl transform rotate-3 hover:rotate-0 transition-all duration-500">
+                                <i class="fas fa-robot text-3xl text-green-400 mb-4"></i>
+                                <h4 class="font-bold">Reinforcement Learning</h4>
+                                <p class="text-xs text-gray-400 mt-2">Multi-agent systems and robotics.</p>
+                            </div>
+                            <div class="glass-panel p-6 rounded-2xl transform -rotate-2 hover:rotate-0 transition-all duration-500">
+                                <i class="fas fa-shield-alt text-3xl text-red-400 mb-4"></i>
+                                <h4 class="font-bold">AI Safety</h4>
+                                <p class="text-xs text-gray-400 mt-2">Fairness and robustness in production.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold mb-6">Research <span class="text-trinity-gold">Focus</span></h2>
+                    <p class="text-gray-300 leading-relaxed mb-8 text-lg">
+                        I am passionate about bridging the gap between theoretical machine learning and practical applications. My work at Trinity College focuses on scalable algorithms that can handle massive, heterogeneous data sources in real-time.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-trinity-gold rounded-full"></div>
+                            <span class="text-gray-300">Generative Models for Drug Discovery</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-trinity-gold rounded-full"></div>
+                            <span class="text-gray-300">Federated Learning & Privacy</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <div class="w-2 h-2 bg-trinity-gold rounded-full"></div>
+                            <span class="text-gray-300">Neural Architecture Search (NAS)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / CTA -->
+    <footer id="contact" class="relative pt-20 pb-10 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">Let's Build the Future.</h2>
+                <p class="text-gray-400 mb-8">Interested in collaborating, co-authoring, or discussing new ideas? I'm always open to new opportunities.</p>
+                <div class="flex justify-center gap-6">
+                    <a href="https://www.linkedin.com/in/md-raqib-khan/" target="_blank" class="w-12 h-12 rounded-full bg-white/5 hover:bg-[#0077b5] flex items-center justify-center text-xl transition-all duration-300">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=RdE9ayMAAAAJ&hl=en" target="_blank" class="w-12 h-12 rounded-full bg-white/5 hover:bg-white flex items-center justify-center text-xl transition-all duration-300 hover:text-black">
+                        <i class="fas fa-graduation-cap"></i>
+                    </a>
+                    <a href="mailto:your.email@tcd.ie" class="w-12 h-12 rounded-full bg-white/5 hover:bg-trinity-gold hover:text-trinity-dark flex items-center justify-center text-xl transition-all duration-300">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 font-mono">
+                <p> Md Raqib Khan. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Proudly built with HTML & <span class="text-trinity-gold">Tailwind</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // --- 1. Particle Background Animation ---
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.size = Math.random() * 2 + 1;
+                this.color = Math.random() > 0.5 ? 'rgba(197, 160, 89, ' : 'rgba(28, 79, 150, '; 
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color + (Math.random() * 0.5 + 0.1) + ')';
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            const particleCount = Math.min(window.innerWidth / 10, 100);
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Connect particles
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+
+                for (let j = i; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 150) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(100, 100, 100, ${0.1 - distance/1500})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+
+        initParticles();
+        animateParticles();
+
+        // --- 2. Typewriter Effect ---
+        const textToType = "PhD Student | Trinity College Dublin";
+        const typeWriterElement = document.getElementById('typewriter');
+        let charIndex = 0;
+
+        function typeWriter() {
+            if (charIndex < textToType.length) {
+                typeWriterElement.innerHTML += textToType.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeWriter, 50); // Typing speed
+            } else {
+                // Remove cursor after typing is done
+                setTimeout(() => {
+                    typeWriterElement.classList.remove('typing-cursor');
+                }, 2000);
+            }
+        }
+        
+        // Start typing after a slight delay
+        setTimeout(typeWriter, 1000);
+
+        // --- 3. Terminal/About Section Logic ---
+        const consoleOutput = document.getElementById('console-output');
+        
+        const commands = [
+            { prompt: 'raqib@tcd:~$ ', text: "whoami", output: "Md Raqib Khan - PhD Student in Computer Science" },
+            { prompt: 'raqib@tcd:~$ ', text: "cat interests.txt", output: "Research Areas:\n- Machine Learning\n- Computer Vision\n- Large Language Models\n- Distributed Systems" },
+            { prompt: 'raqib@tcd:~$ ', text: "python status.py", output: "Loading profile... \nStatus: Actively seeking research collaborations. \nLocation: Trinity College Dublin" },
+            { prompt: 'raqib@tcd:~$ ', text: "echo 'Hello World!'", output: "Hello World!" }
+        ];
+
+        let cmdIndex = 0;
+
+        function typeCommand(commandObj, callback) {
+            const lineDiv = document.createElement('div');
+            lineDiv.className = 'mb-2';
+            
+            const promptSpan = document.createElement('span');
+            promptSpan.className = 'text-green-500';
+            promptSpan.innerText = commandObj.prompt;
+            
+            const textSpan = document.createElement('span');
+            textSpan.className = 'text-white';
+            
+            lineDiv.appendChild(promptSpan);
+            lineDiv.appendChild(textSpan);
+            consoleOutput.appendChild(lineDiv);
+            
+            let charIndex = 0;
+            const interval = setInterval(() => {
+                if (charIndex < commandObj.text.length) {
+                    textSpan.innerHTML += commandObj.text.charAt(charIndex);
+                    charIndex++;
+                    // Auto scroll
+                    consoleOutput.scrollTop = consoleOutput.scrollHeight;
+                } else {
+                    clearInterval(interval);
+                    // Add output
+                    setTimeout(() => {
+                        const outputDiv = document.createElement('div');
+                        outputDiv.className = 'text-gray-400 mb-4 pl-4 border-l-2 border-gray-700';
+                        outputDiv.innerText = commandObj.output;
+                        consoleOutput.appendChild(outputDiv);
+                        consoleOutput.scrollTop = consoleOutput.scrollHeight;
+                        if (callback) callback();
+                    }, 500);
+                }
+            }, 50);
+        }
+
+        function runConsole() {
+            if (cmdIndex < commands.length) {
+                typeCommand(commands[cmdIndex], () => {
+                    cmdIndex++;
+                    setTimeout(runConsole, 1000); // Wait before next command
+                });
+            }
+        }
+
+        // --- 4. Intersection Observer for Animations ---
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // If element is the console container, start typing
+                    if (entry.target.id === 'console-output') {
+                        if (!entry.target.classList.contains('started')) {
+                            entry.target.classList.add('started');
+                            setTimeout(runConsole, 500);
+                        }
+                    }
+                    
+                    // If element is a counter
+                    if (entry.target.classList.contains('counter')) {
+                        const target = parseInt(entry.target.getAttribute('data-target'));
+                        animateValue(entry.target, 0, target, 2000);
+                        observer.unobserve(entry.target);
+                    }
+
+                    // Generic fade in
+                    if (entry.target.classList.contains('animate-on-scroll')) {
+                        entry.target.classList.add('animate-fade-in-up');
+                        entry.target.classList.remove('opacity-0');
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements
+        document.querySelectorAll('.counter, #console-output').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Number animation for stats
+        function animateValue(obj, start, end, duration) {
+            let startTimestamp = null;
+            const step = (timestamp) => {
+                if (!startTimestamp) startTimestamp = timestamp;
+                const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+                obj.innerHTML = Math.floor(progress * (end - start) + start);
+                if (progress < 1) {
+                    window.requestAnimationFrame(step);
+                }
+            };
+            window.requestAnimationFrame(step);
+        }
+
+        // Sticky Nav Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-trinity-dark/90', 'backdrop-filter', 'backdrop-blur-lg', 'border-b', 'border-white/10');
+            } else {
+                navbar.classList.remove('bg-trinity-dark/90', 'backdrop-filter', 'backdrop-blur-lg', 'border-b', 'border-white/10');
+            }
+        });
+
+    </script>
+</body>
+</html>
