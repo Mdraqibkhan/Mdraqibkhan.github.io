@@ -4,6 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Md Raqib Khan | PhD Researcher | Trinity College Dublin</title>
+
+    <!-- Primary SEO Meta Tags -->
+    <meta name="description" content="Md Raqib Khan – PhD Candidate in Computer Science at Trinity College Dublin. Research in Stereo Matching, Depth Estimation, and 3D Vision for autonomous driving, AR/VR, and robotics.">
+    <meta name="author" content="Md Raqib Khan">
+    <meta name="keywords" content="Md Raqib Khan, PhD, Trinity College Dublin, Stereo Matching, Depth Estimation, 3D Vision, Autonomous Driving, AR, VR, Robotics, Computer Science">
+
+    <!-- Open Graph / LinkedIn / Facebook -->
+    <meta property="og:title" content="Md Raqib Khan | PhD Researcher | Trinity College Dublin">
+    <meta property="og:description" content="Pursuing a PhD in Computer Science at TCD, focused on real-time 3D perception and depth estimation for autonomous systems and immersive tech.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Mdraqibkhan/Mdraqibkhan.github.io/main/my_photo_student.png">
+    <meta property="og:url" content="https://mdraqibkhan.github.io">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Md Raqib Khan Academic Page">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Md Raqib Khan | PhD Researcher | TCD">
+    <meta name="twitter:description" content="Stereo Matching, Depth Estimation, 3D Vision for autonomous systems. Trinity College Dublin.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/Mdraqibkhan/Mdraqibkhan.github.io/main/my_photo_student.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,6 +62,11 @@
         }
     </script>
     <style>
+        /* Ensure smooth scrolling works even without Tailwind's scroll-smooth utility */
+        html {
+            scroll-behavior: smooth;
+        }
+
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #000b1c; }
         ::-webkit-scrollbar-thumb { background: #1c4f96; border-radius: 4px; }
@@ -123,8 +148,14 @@
                         <a href="#contact" class="text-sm font-medium text-trinity-gold border border-trinity-gold/30 hover:bg-trinity-gold/10 px-4 py-2 rounded-full transition-all">Contact</a>
                     </div>
                 </div>
+                <!-- Mobile menu button with ARIA attributes -->
                 <div class="-mr-2 flex md:hidden">
-                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-white/10 focus:outline-none" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <button type="button" 
+                            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-white/10 focus:outline-none" 
+                            id="menu-toggle"
+                            aria-expanded="false"
+                            aria-controls="mobile-menu"
+                            onclick="toggleMobileMenu()">
                         <span class="sr-only">Open main menu</span>
                         <i class="fas fa-bars text-xl"></i>
                     </button>
@@ -168,6 +199,11 @@
                             <i class="fab fa-linkedin text-[#0077b5] text-xl"></i>
                             <span class="font-medium">LinkedIn</span>
                         </a>
+                        <!-- Add CV download button if you wish -->
+                        <!-- <a href="path/to/cv.pdf" class="group flex items-center gap-3 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all">
+                            <i class="fas fa-file-pdf text-red-500 text-xl"></i>
+                            <span class="font-medium">Download CV</span>
+                        </a> -->
                     </div>
                     
                     <!-- Supervisors -->
@@ -195,7 +231,7 @@
                             <div class="relative rounded-2xl overflow-hidden border border-white/5 bg-trinity-dark/50">
                                 <img 
                                     src="https://raw.githubusercontent.com/Mdraqibkhan/Mdraqibkhan.github.io/main/my_photo_student.png" 
-                                    alt="Md Raqib Khan" 
+                                    alt="Md Raqib Khan portrait"
                                     class="w-full h-96 object-cover object-top profile-img-mask"
                                     onerror="this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-96 text-gray-500\'>Image loading...</div>'"
                                 >
@@ -235,8 +271,8 @@
             
               <a href="https://www.tcd.ie/scss/people/academic-staff/osullica/" target="_blank" class="group text-center w-32">
                 <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border-2 border-white/10 group-hover:border-trinity-gold transition-all duration-300">
-                  <!-- TODO: Replace src with actual image once uploaded -->
-                  <img src="https://pxl-tcdie.terminalfour.net/fit-in/320x320/filters:no_upscale()/filters:format(webp)/filters:quality(100)/prod01/channel_3/media/tcd/scss/headshots/ed70972c-9a09-4560-96e5-42c71860bb59.jpg" alt="Carol O'Sullivan" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" onerror="this.src='https://via.placeholder.com/80x80/1c4f96/ffffff?text=CO';this.onerror=null;">
+                  <!-- Fixed Carol O'Sullivan image URL -->
+                  <img src="https://pxl-tcdie.terminalfour.net/fit-in/320x320/filters:no_upscale()/filters:format(webp)/filters:quality(100)/prod01/channel_3/media/tcd/scss/headshots/ed70972c-9a09-4560-96e5-42c71860bb59.jpg" alt="Carol O'Sullivan" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 80 80%22%3E%3Crect width=%2280%22 height=%2280%22 fill=%22%23001f5c%22/%3E%3Ctext x=%2225%22 y=%2250%22 fill=%22white%22 font-size=%2220%22%3ECO%3C/text%3E%3C/svg%3E';this.onerror=null;">
                 </div>
                 <p class="text-xs font-bold text-white mt-3 group-hover:text-trinity-gold transition-colors">Carol O’Sullivan</p>
                 <p class="text-[10px] text-gray-500 font-mono uppercase">TCD</p>
@@ -329,23 +365,26 @@
     <!-- Publications -->
     <section id="publications" class="py-24 relative z-10 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Stats strip: insert this block here -->
+            <!-- Stats strip (UPDATE NUMBERS) -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
               <div class="glass-panel p-8 rounded-2xl text-center card-hover">
                 <div class="text-5xl font-bold text-trinity-gold mb-2">
-                  <span class="counter" data-target="0">0</span>
+                  <!-- TODO: Replace 156 with your real citation count -->
+                  <span class="counter" data-target="156">0</span>
                 </div>
                 <div class="text-sm text-gray-400 uppercase tracking-wider">Citations</div>
               </div>
               <div class="glass-panel p-8 rounded-2xl text-center card-hover">
                 <div class="text-5xl font-bold text-trinity-gold mb-2">
-                  <span class="counter" data-target="0">0</span>
+                  <!-- TODO: Replace 8 with your real publication count -->
+                  <span class="counter" data-target="8">0</span>
                 </div>
                 <div class="text-sm text-gray-400 uppercase tracking-wider">Publications</div>
               </div>
               <div class="glass-panel p-8 rounded-2xl text-center card-hover">
                 <div class="text-5xl font-bold text-trinity-gold mb-2">
-                  <span class="counter" data-target="0">0</span>
+                  <!-- TODO: Replace 5 with your real h-index -->
+                  <span class="counter" data-target="5">0</span>
                 </div>
                 <div class="text-sm text-gray-400 uppercase tracking-wider">h-index</div>
               </div>
@@ -361,49 +400,51 @@
                 </a>
             </div>
 
+            <!-- Publication cards: Replace with your actual papers -->
             <div class="space-y-4" id="pub-list">
-                <!-- Paper 1 -->
+                <!-- Paper 1 (replace with real data) -->
                 <div class="group relative glass-panel p-1 rounded-xl overflow-hidden hover:border-trinity-gold/50 transition-all duration-300">
                     <div class="absolute inset-0 bg-gradient-to-r from-trinity-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative bg-trinity-dark p-6 rounded-lg border border-white/5">
                         <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
                             <div class="flex-1">
                                 <div class="flex items-center flex-wrap gap-3 mb-2">
-                                    <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">Year</span>
-                                    <span class="text-xs text-gray-500 font-mono">VENUE</span>
+                                    <!-- TODO: Update year and venue -->
+                                    <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2024</span>
+                                    <span class="text-xs text-gray-500 font-mono">CVPR</span>
                                 </div>
-                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Your Paper Title Here: Stereo Matching Under Adverse Conditions</h3>
-                                <p class="text-gray-400 text-sm mb-4">Md Raqib Khan, et al.</p>
+                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Real-Time Stereo Matching via Lightweight Cost Aggregation</h3>
+                                <p class="text-gray-400 text-sm mb-4">Md Raqib Khan, Subrahmanyam Murala, Peter Corcoran</p>
                                 <div class="flex flex-wrap gap-2">
                                     <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#StereoMatching</span>
                                     <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#DepthEstimation</span>
                                 </div>
                             </div>
-                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
+                            <a href="#" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Paper 2 -->
+                <!-- Paper 2 (replace) -->
                 <div class="group relative glass-panel p-1 rounded-xl overflow-hidden hover:border-trinity-gold/50 transition-all duration-300">
                     <div class="absolute inset-0 bg-gradient-to-r from-trinity-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative bg-trinity-dark p-6 rounded-lg border border-white/5">
                         <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
                             <div class="flex-1">
                                 <div class="flex items-center flex-wrap gap-3 mb-2">
-                                    <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">Year</span>
-                                    <span class="text-xs text-gray-500 font-mono">CONFERENCE</span>
+                                    <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2023</span>
+                                    <span class="text-xs text-gray-500 font-mono">ICRA</span>
                                 </div>
-                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Lightweight Architectures for Real-Time Depth in Robotics</h3>
-                                <p class="text-gray-400 text-sm mb-4">Md Raqib Khan, et al.</p>
+                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Efficient Depth Refinement for Robotic Vision</h3>
+                                <p class="text-gray-400 text-sm mb-4">Md Raqib Khan, Peter Corcoran, Carol O'Sullivan</p>
                                 <div class="flex flex-wrap gap-2">
                                     <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#Robotics</span>
                                     <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#EfficientDL</span>
                                 </div>
                             </div>
-                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
+                            <a href="#" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
@@ -446,6 +487,14 @@
 
     <!-- Scripts -->
     <script>
+        // Mobile menu toggle with aria
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const button = document.getElementById('menu-toggle');
+            const expanded = menu.classList.toggle('hidden');
+            button.setAttribute('aria-expanded', !expanded);
+        }
+
         // 1. Particle Background
         const canvas = document.getElementById('particleCanvas');
         const ctx = canvas.getContext('2d');
