@@ -95,6 +95,10 @@
             transform: scaleX(1);
             transform-origin: bottom left;
         }
+        .profile-img-mask {
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
     </style>
 </head>
 <body class="bg-trinity-dark text-white font-sans overflow-x-hidden antialiased selection:bg-trinity-gold selection:text-trinity-dark">
@@ -178,32 +182,33 @@
                         </div>
                     </div>
                 </div>
+                
+                <!-- Profile Photo Section -->
                 <div class="lg:col-span-2 hidden lg:block opacity-0 animate-fade-in-up" style="animation-delay: 0.4s;">
-                    <div class="relative w-full aspect-square max-w-md mx-auto">
-                        <div class="absolute inset-0 bg-gradient-to-tr from-trinity-blue to-transparent rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
-                        <div class="glass-panel rounded-3xl p-2 transform hover:scale-[1.02] transition-transform duration-500 rotate-3 hover:rotate-0">
-                            <div class="bg-trinity-dark/80 rounded-2xl overflow-hidden border border-white/5 p-8 flex items-center justify-center h-96">
-                                <!-- Geometric Abstract Representation of Depth/3D -->
-                                <svg viewBox="0 0 200 200" class="w-full h-full drop-shadow-[0_0_15px_rgba(197,160,89,0.3)]">
-                                    <defs>
-                                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                                            <stop offset="0%" style="stop-color:#c5a059;stop-opacity:1" />
-                                            <stop offset="100%" style="stop-color:#1c4f96;stop-opacity:1" />
-                                        </linearGradient>
-                                    </defs>
-                                    <path d="M100,10 L190,60 L190,150 L100,190 L10,150 L10,60 Z" fill="none" stroke="url(#grad1)" stroke-width="1" opacity="0.5"/>
-                                    <path d="M100,40 L160,70 L160,130 L100,160 L40,130 L40,70 Z" fill="none" stroke="url(#grad1)" stroke-width="1.5" opacity="0.8"/>
-                                    <circle cx="100" cy="100" r="4" fill="#c5a059" class="animate-pulse"/>
-                                    <line x1="100" y1="100" x2="100" y2="40" stroke="#c5a059" stroke-width="0.5" opacity="0.5"/>
-                                    <line x1="100" y1="100" x2="160" y2="130" stroke="#c5a059" stroke-width="0.5" opacity="0.5"/>
-                                    <line x1="100" y1="100" x2="40" y2="130" stroke="#c5a059" stroke-width="0.5" opacity="0.5"/>
-                                    <text x="50%" y="95%" dominant-baseline="middle" text-anchor="middle" fill="#c5a059" font-family="monospace" font-size="10">STEREO_DEPTH_v2</text>
-                                </svg>
+                    <div class="relative w-full max-w-md mx-auto">
+                        <!-- Ambient Glow -->
+                        <div class="absolute inset-0 bg-gradient-to-tr from-trinity-gold to-trinity-blue rounded-full blur-3xl opacity-20 animate-pulse-slow"></div>
+                        
+                        <!-- Photo Card -->
+                        <div class="relative glass-panel rounded-3xl p-3 transform hover:scale-[1.02] transition-transform duration-500 rotate-2 hover:rotate-0">
+                            <div class="relative rounded-2xl overflow-hidden border border-white/5 bg-trinity-dark/50">
+                                <img 
+                                    src="https://raw.githubusercontent.com/Mdraqibkhan/Mdraqibkhan.github.io/main/my_photo_smart.png" 
+                                    alt="Md Raqib Khan" 
+                                    class="w-full h-96 object-cover object-top profile-img-mask"
+                                    onerror="this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-96 text-gray-500\'>Image loading...</div>'"
+                                >
+                                <!-- Overlaid Info Badge -->
+                                <div class="absolute bottom-4 left-4 right-4 glass-panel p-3 rounded-xl border-l-4 border-trinity-gold">
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <p class="text-xs text-trinity-gold font-mono">STATUS</p>
+                                            <p class="font-serif font-bold text-white text-sm">Active Researcher</p>
+                                        </div>
+                                        <div class="w-3 h-3 bg-green-500 rounded-full shadow-[0_0_10px_rgba(34,197,94,0.6)] animate-pulse"></div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="absolute -bottom-6 -left-6 glass-panel p-4 rounded-xl border-l-4 border-trinity-gold">
-                            <p class="text-xs text-gray-400">Department</p>
-                            <p class="font-serif font-bold text-white">Computer Science</p>
                         </div>
                     </div>
                 </div>
@@ -304,19 +309,18 @@
                 </a>
             </div>
 
-            <!-- Publication Card (Template for you to duplicate) -->
             <div class="space-y-4" id="pub-list">
-                <!-- Add your real papers here. This is a placeholder showing the layout. -->
+                <!-- Paper 1 -->
                 <div class="group relative glass-panel p-1 rounded-xl overflow-hidden hover:border-trinity-gold/50 transition-all duration-300">
                     <div class="absolute inset-0 bg-gradient-to-r from-trinity-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative bg-trinity-dark p-6 rounded-lg border border-white/5">
                         <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
                             <div class="flex-1">
                                 <div class="flex items-center flex-wrap gap-3 mb-2">
-                                    <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2024</span>
-                                    <span class="text-xs text-gray-500 font-mono">VENUE_SHORT</span>
+                                    <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">Year</span>
+                                    <span class="text-xs text-gray-500 font-mono">VENUE</span>
                                 </div>
-                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Your Paper Title Here: Real-Time Depth Estimation for Autonomous Navigation</h3>
+                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Your Paper Title Here: Stereo Matching Under Adverse Conditions</h3>
                                 <p class="text-gray-400 text-sm mb-4">Md Raqib Khan, et al.</p>
                                 <div class="flex flex-wrap gap-2">
                                     <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#StereoMatching</span>
@@ -330,21 +334,21 @@
                     </div>
                 </div>
                 
-                <!-- Another Example -->
+                <!-- Paper 2 -->
                 <div class="group relative glass-panel p-1 rounded-xl overflow-hidden hover:border-trinity-gold/50 transition-all duration-300">
                     <div class="absolute inset-0 bg-gradient-to-r from-trinity-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative bg-trinity-dark p-6 rounded-lg border border-white/5">
                         <div class="flex flex-col md:flex-row md:items-start justify-between gap-4">
                             <div class="flex-1">
                                 <div class="flex items-center flex-wrap gap-3 mb-2">
-                                    <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2023</span>
+                                    <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">Year</span>
                                     <span class="text-xs text-gray-500 font-mono">CONFERENCE</span>
                                 </div>
-                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Lightweight Architectures for AR/VR Depth Sensing</h3>
+                                <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Lightweight Architectures for Real-Time Depth in Robotics</h3>
                                 <p class="text-gray-400 text-sm mb-4">Md Raqib Khan, et al.</p>
                                 <div class="flex flex-wrap gap-2">
-                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#ARVR</span>
-                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#LightweightDL</span>
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#Robotics</span>
+                                    <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#EfficientDL</span>
                                 </div>
                             </div>
                             <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
@@ -356,7 +360,7 @@
             </div>
             
             <div class="mt-8 p-4 rounded-lg bg-blue-900/20 border border-blue-500/20 text-center">
-                <p class="text-sm text-gray-400">Replace the placeholder cards above by copying the HTML block and inserting your real paper details from <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" class="text-trinity-gold underline">Google Scholar</a>.</p>
+                <p class="text-sm text-gray-400">Update the paper cards above with your real publications from <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" class="text-trinity-gold underline">Google Scholar</a>.</p>
             </div>
         </div>
     </section>
@@ -382,7 +386,7 @@
             </div>
 
             <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 font-mono">
-                <p> Md Raqib Khan. Hosted on GitHub Pages.</p>
+                <p>&copy; Md Raqib Khan. Hosted on GitHub Pages.</p>
                 <p class="mt-2 md:mt-0">PhD Candidate, Trinity College Dublin</p>
             </div>
         </div>
@@ -494,7 +498,6 @@
             }, 1000);
         }
         
-        // Use Intersection Observer to trigger terminal
         const termObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && !consoleOutput.classList.contains('started')) {
