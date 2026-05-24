@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
@@ -62,10 +63,7 @@
         }
     </script>
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
+        html { scroll-behavior: smooth; }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #000b1c; }
         ::-webkit-scrollbar-thumb { background: #1c4f96; border-radius: 4px; }
@@ -98,27 +96,6 @@
         }
         @keyframes blink { 50% { opacity: 0; } }
         
-        .supervisor-link {
-            position: relative;
-            display: inline-block;
-            transition: color 0.3s;
-        }
-        .supervisor-link::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 1px;
-            bottom: -2px;
-            left: 0;
-            background-color: #c5a059;
-            transform: scaleX(0);
-            transform-origin: bottom right;
-            transition: transform 0.3s ease-out;
-        }
-        .supervisor-link:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
         .profile-img-mask {
             mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
             -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
@@ -147,7 +124,6 @@
                         <a href="#contact" class="text-sm font-medium text-trinity-gold border border-trinity-gold/30 hover:bg-trinity-gold/10 px-4 py-2 rounded-full transition-all">Contact</a>
                     </div>
                 </div>
-                <!-- Mobile menu button with ARIA attributes -->
                 <div class="-mr-2 flex md:hidden">
                     <button type="button" 
                             class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-white/10 focus:outline-none" 
@@ -161,7 +137,6 @@
                 </div>
             </div>
         </div>
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden glass-panel">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-white/10">About</a>
@@ -175,14 +150,9 @@
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-            
-            <!-- Main 5-Column Grid -->
             <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
-                
-                <!-- Left: Profile Text + Supervision Team (3 cols) -->
+                <!-- Left: Profile + Team (3 cols) -->
                 <div class="lg:col-span-3 space-y-8 opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
-                    
-                    <!-- Profile Text Block -->
                     <div>
                         <p class="text-trinity-gold font-mono text-sm tracking-widest mb-4 uppercase">PhD Candidate @ Trinity College Dublin</p>
                         <h1 class="text-5xl md:text-7xl font-serif font-bold leading-tight">
@@ -192,11 +162,9 @@
                             <span id="typewriter" class="text-xl md:text-2xl text-gray-300 font-mono typing-cursor"></span>
                         </div>
                     </div>
-                    
                     <p class="text-gray-400 text-lg leading-relaxed max-w-2xl border-l-2 border-trinity-gold/50 pl-6">
                         Pursuing a PhD in Computer Science at Trinity College Dublin, specializing in <strong class="text-white">Stereo Matching</strong> and <strong class="text-white">Depth Estimation</strong> for advanced robotics, AR, and VR applications. My research addresses critical challenges in 3D reconstruction and autonomous driving.
                     </p>
-                    
                     <div class="flex flex-wrap gap-4">
                         <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all">
                             <i class="fas fa-graduation-cap text-trinity-gold text-xl"></i>
@@ -208,85 +176,30 @@
                         </a>
                     </div>
 
-                    <!-- Supervision Team: Horizontally below profile -->
+                    <!-- Supervision Team -->
                     <div class="relative z-10 w-full pt-10 border-t border-white/10">
-                        <p class="text-sm font-mono text-gray-400 uppercase tracking-[0.25em] mb-8 text-center">
-                            Supervision Team
-                        </p>
-                    
+                        <p class="text-sm font-mono text-gray-400 uppercase tracking-[0.25em] mb-8 text-center">Supervision Team</p>
                         <div class="flex flex-wrap justify-center gap-10">
-                    
-                            <!-- Supervisor 1 -->
-                            <a href="https://www.scss.tcd.ie/~muralas/"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="group text-center w-44">
-                                <div class="w-32 h-32 mx-auto rounded-full overflow-hidden
-                                            border-4 border-white/10
-                                            shadow-xl shadow-black/30
-                                            group-hover:border-trinity-gold
-                                            group-hover:scale-105
-                                            transition-all duration-300">
-                                    <img src="https://www.scss.tcd.ie/~muralas/wp-content/uploads/2023/07/murala.png"
-                                         alt="Subrahmanyam Murala"
-                                         class="w-full h-full object-cover"
-                                         loading="lazy">
+                            <a href="https://www.scss.tcd.ie/~muralas/" target="_blank" rel="noopener noreferrer" class="group text-center w-44">
+                                <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white/10 shadow-xl shadow-black/30 group-hover:border-trinity-gold group-hover:scale-105 transition-all duration-300">
+                                    <img src="https://www.scss.tcd.ie/~muralas/wp-content/uploads/2023/07/murala.png" alt="Subrahmanyam Murala" class="w-full h-full object-cover" loading="lazy">
                                 </div>
-                                <p class="text-sm font-semibold text-white mt-4 group-hover:text-trinity-gold transition-colors">
-                                    Subrahmanyam Murala
-                                </p>
-                                <p class="text-xs text-gray-400 font-mono uppercase tracking-wide">
-                                    TCD
-                                </p>
+                                <p class="text-sm font-semibold text-white mt-4 group-hover:text-trinity-gold transition-colors">Subrahmanyam Murala</p>
+                                <p class="text-xs text-gray-400 font-mono uppercase tracking-wide">TCD</p>
                             </a>
-                    
-                            <!-- Supervisor 2 -->
-                            <a href="https://www.universityofgalway.ie/science-engineering/staff-profiles/petercorcoran/"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="group text-center w-44">
-                                <div class="w-32 h-32 mx-auto rounded-full overflow-hidden
-                                            border-4 border-white/10
-                                            shadow-xl shadow-black/30
-                                            group-hover:border-trinity-gold
-                                            group-hover:scale-105
-                                            transition-all duration-300">
-                                    <img src="https://www.universityofgalway.ie/media/researchsub-sites/c3i/images/Peter_320x320.jpg"
-                                         alt="Peter Corcoran"
-                                         class="w-full h-full object-cover"
-                                         loading="lazy">
+                            <a href="https://www.universityofgalway.ie/science-engineering/staff-profiles/petercorcoran/" target="_blank" rel="noopener noreferrer" class="group text-center w-44">
+                                <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white/10 shadow-xl shadow-black/30 group-hover:border-trinity-gold group-hover:scale-105 transition-all duration-300">
+                                    <img src="https://www.universityofgalway.ie/media/researchsub-sites/c3i/images/Peter_320x320.jpg" alt="Peter Corcoran" class="w-full h-full object-cover" loading="lazy">
                                 </div>
-                                <p class="text-sm font-semibold text-white mt-4 group-hover:text-trinity-gold transition-colors">
-                                    Peter Corcoran
-                                </p>
-                                <p class="text-xs text-gray-400 font-mono uppercase tracking-wide">
-                                    UoG
-                                </p>
+                                <p class="text-sm font-semibold text-white mt-4 group-hover:text-trinity-gold transition-colors">Peter Corcoran</p>
+                                <p class="text-xs text-gray-400 font-mono uppercase tracking-wide">UoG</p>
                             </a>
-                    
-                            <!-- Supervisor 3 -->
-                            <a href="https://www.tcd.ie/scss/people/academic-staff/osullica/"
-                               target="_blank"
-                               rel="noopener noreferrer"
-                               class="group text-center w-44">
-                                <div class="w-32 h-32 mx-auto rounded-full overflow-hidden
-                                            border-4 border-white/10
-                                            shadow-xl shadow-black/30
-                                            group-hover:border-trinity-gold
-                                            group-hover:scale-105
-                                            transition-all duration-300">
-                                    <img src="https://pxl-tcdie.terminalfour.net/fit-in/320x320/filters:no_upscale()/filters:format(webp)/filters:quality(100)/prod01/channel_3/media/tcd/scss/headshots/ed70972c-9a09-4560-96e5-42c71860bb59.jpg"
-                                         alt="Carol O'Sullivan"
-                                         class="w-full h-full object-cover"
-                                         loading="lazy"
-                                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 80 80%22%3E%3Crect width=%2280%22 height=%2280%22 fill=%22%23001f5c%22/%3E%3Ctext x=%2225%22 y=%2250%22 fill=%22white%22 font-size=%2220%22%3ECO%3C/text%3E%3C/svg%3E';this.onerror=null;">
+                            <a href="https://www.tcd.ie/scss/people/academic-staff/osullica/" target="_blank" rel="noopener noreferrer" class="group text-center w-44">
+                                <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white/10 shadow-xl shadow-black/30 group-hover:border-trinity-gold group-hover:scale-105 transition-all duration-300">
+                                    <img src="https://pxl-tcdie.terminalfour.net/fit-in/320x320/filters:no_upscale()/filters:format(webp)/filters:quality(100)/prod01/channel_3/media/tcd/scss/headshots/ed70972c-9a09-4560-96e5-42c71860bb59.jpg" alt="Carol O'Sullivan" class="w-full h-full object-cover" loading="lazy" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 80 80%22%3E%3Crect width=%2280%22 height=%2280%22 fill=%22%23001f5c%22/%3E%3Ctext x=%2225%22 y=%2250%22 fill=%22white%22 font-size=%2220%22%3ECO%3C/text%3E%3C/svg%3E';this.onerror=null;">
                                 </div>
-                                <p class="text-sm font-semibold text-white mt-4 group-hover:text-trinity-gold transition-colors">
-                                    Carol O’Sullivan
-                                </p>
-                                <p class="text-xs text-gray-400 font-mono uppercase tracking-wide">
-                                    TCD
-                                </p>
+                                <p class="text-sm font-semibold text-white mt-4 group-hover:text-trinity-gold transition-colors">Carol O’Sullivan</p>
+                                <p class="text-xs text-gray-400 font-mono uppercase tracking-wide">TCD</p>
                             </a>
                         </div>
                     </div>
@@ -295,19 +208,10 @@
                 <!-- Right: Profile Photo (2 cols) -->
                 <div class="lg:col-span-2 hidden lg:block opacity-0 animate-fade-in-up" style="animation-delay: 0.4s;">
                     <div class="relative w-full max-w-md mx-auto lg:ml-auto lg:mr-0">
-                        <!-- Ambient Glow -->
                         <div class="absolute inset-0 bg-gradient-to-tr from-trinity-gold to-trinity-blue rounded-full blur-3xl opacity-20 animate-pulse-slow"></div>
-                        
-                        <!-- Photo Card -->
                         <div class="relative glass-panel rounded-3xl p-3 transform hover:scale-[1.02] transition-transform duration-500 rotate-2 hover:rotate-0">
                             <div class="relative rounded-2xl overflow-hidden border border-white/5 bg-trinity-dark/50">
-                                <img 
-                                    src="https://raw.githubusercontent.com/Mdraqibkhan/Mdraqibkhan.github.io/main/my_photo_student.png" 
-                                    alt="Md Raqib Khan portrait"
-                                    class="w-full h-80 object-cover object-top profile-img-mask"
-                                    onerror="this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-96 text-gray-500\'>Image loading...</div>'"
-                                >
-                                <!-- Overlaid Info Badge -->
+                                <img src="https://raw.githubusercontent.com/Mdraqibkhan/Mdraqibkhan.github.io/main/my_photo_student.png" alt="Md Raqib Khan portrait" class="w-full h-80 object-cover object-top profile-img-mask" onerror="this.parentElement.innerHTML='<div class=\'flex items-center justify-center h-96 text-gray-500\'>Image loading...</div>'">
                                 <div class="absolute bottom-4 left-4 right-4 glass-panel p-3 rounded-xl border-l-4 border-trinity-gold">
                                     <div class="flex justify-between items-center">
                                         <div>
@@ -323,8 +227,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Scroll Indicator -->
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
             <span class="text-xs font-mono tracking-widest">SCROLL</span>
             <div class="w-px h-12 bg-gradient-to-b from-white to-transparent"></div>
@@ -354,8 +256,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Interactive Terminal -->
                 <div class="w-full glass-panel rounded-xl overflow-hidden shadow-2xl border border-gray-800 transform hover:scale-[1.02] transition-transform duration-500">
                     <div class="bg-gray-900/50 px-4 py-2 flex items-center gap-2 border-b border-gray-700">
                         <div class="flex gap-2">
@@ -365,15 +265,13 @@
                         </div>
                         <div class="flex-1 text-center text-xs font-mono text-gray-500">raqib@tcd-lab: ~/depth-estimation</div>
                     </div>
-                    <div class="p-6 font-mono text-sm h-80 overflow-y-auto bg-black/90 text-gray-300" id="console-output">
-                        <!-- JS will populate this -->
-                    </div>
+                    <div class="p-6 font-mono text-sm h-80 overflow-y-auto bg-black/90 text-gray-300" id="console-output"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Research Focus Visual -->
+    <!-- Research Focus -->
     <section id="research" class="py-24 relative overflow-hidden">
         <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-trinity-blue/20 to-transparent pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -387,21 +285,21 @@
                         <i class="fas fa-car text-trinity-gold text-2xl"></i>
                     </div>
                     <h3 class="text-2xl font-serif font-bold mb-4">Autonomous Driving</h3>
-                    <p class="text-gray-400 leading-relaxed">Improving depth perception for environment sensing and obstacle avoidance in self-driving vehicles. Enabling safer navigation through robust disparity estimation.</p>
+                    <p class="text-gray-400 leading-relaxed">Improving depth perception for environment sensing and obstacle avoidance in self-driving vehicles.</p>
                 </div>
                 <div class="glass-panel p-8 rounded-2xl card-hover group">
                     <div class="w-14 h-14 rounded-full bg-trinity-gold/10 flex items-center justify-center mb-6 group-hover:bg-trinity-gold/20 transition-colors">
                         <i class="fas fa-vr-cardboard text-trinity-gold text-2xl"></i>
                     </div>
                     <h3 class="text-2xl font-serif font-bold mb-4">AR / VR</h3>
-                    <p class="text-gray-400 leading-relaxed">Real-time 3D scene understanding for immersive augmented and virtual reality experiences. Lightweight models for mobile AR headsets.</p>
+                    <p class="text-gray-400 leading-relaxed">Real-time 3D scene understanding for immersive augmented and virtual reality experiences.</p>
                 </div>
                 <div class="glass-panel p-8 rounded-2xl card-hover group">
                     <div class="w-14 h-14 rounded-full bg-trinity-gold/10 flex items-center justify-center mb-6 group-hover:bg-trinity-gold/20 transition-colors">
                         <i class="fas fa-robot text-trinity-gold text-2xl"></i>
                     </div>
                     <h3 class="text-2xl font-serif font-bold mb-4">Robotics</h3>
-                    <p class="text-gray-400 leading-relaxed">Enhancing robotic manipulation and navigation through precise depth sensing. Reducing computational footprint for embedded robotic systems.</p>
+                    <p class="text-gray-400 leading-relaxed">Enhancing robotic manipulation and navigation through precise depth sensing.</p>
                 </div>
             </div>
         </div>
@@ -410,23 +308,22 @@
     <!-- Publications -->
     <section id="publications" class="py-24 relative z-10 border-t border-white/5">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Stats strip (YOUR REAL DATA) -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
               <div class="glass-panel p-8 rounded-2xl text-center card-hover">
                 <div class="text-5xl font-bold text-trinity-gold mb-2">
-                  <span class="counter" data-target="269">0</span>
+                  <span class="counter" data-target="269" data-stat="citations">0</span>
                 </div>
                 <div class="text-sm text-gray-400 uppercase tracking-wider">Citations</div>
               </div>
               <div class="glass-panel p-8 rounded-2xl text-center card-hover">
                 <div class="text-5xl font-bold text-trinity-gold mb-2">
-                  <span class="counter" data-target="10">0</span>
+                  <span class="counter" data-target="10" data-stat="publications">0</span>
                 </div>
                 <div class="text-sm text-gray-400 uppercase tracking-wider">Publications</div>
               </div>
               <div class="glass-panel p-8 rounded-2xl text-center card-hover">
                 <div class="text-5xl font-bold text-trinity-gold mb-2">
-                  <span class="counter" data-target="6">0</span>
+                  <span class="counter" data-target="6" data-stat="h_index">0</span>
                 </div>
                 <div class="text-sm text-gray-400 uppercase tracking-wider">h-index</div>
               </div>
@@ -442,9 +339,8 @@
                 </a>
             </div>
 
-            <!-- REAL PUBLICATION LIST -->
             <div class="space-y-4" id="pub-list">
-                <!-- Paper: NTIRE 2026 Challenge on Efficient Burst HDR -->
+                <!-- NTIRE 2026 -->
                 <div class="group relative glass-panel p-1 rounded-xl overflow-hidden hover:border-trinity-gold/50 transition-all duration-300">
                     <div class="absolute inset-0 bg-gradient-to-r from-trinity-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative bg-trinity-dark p-6 rounded-lg border border-white/5">
@@ -453,7 +349,7 @@
                                 <div class="flex items-center flex-wrap gap-3 mb-2">
                                     <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2026</span>
                                     <span class="text-xs text-gray-500 font-mono">CVPR Workshop</span>
-                                    <span class="text-xs text-trinity-gold font-mono">19 citations</span>
+                                    <span class="text-xs text-trinity-gold font-mono dynamic-citation">19 citations</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">NTIRE 2026 Challenge on Efficient Burst HDR and Restoration: Datasets, Methods, and Results</h3>
                                 <p class="text-gray-400 text-sm mb-4">H. Park, E. Park, S. Lee, R. Timofte, <strong>Md Raqib Khan</strong> (et al.)</p>
@@ -469,7 +365,7 @@
                     </div>
                 </div>
 
-                <!-- Efficient Low Light Image Enhancement -->
+                <!-- Low Light 2026 -->
                 <div class="group relative glass-panel p-1 rounded-xl overflow-hidden hover:border-trinity-gold/50 transition-all duration-300">
                     <div class="absolute inset-0 bg-gradient-to-r from-trinity-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative bg-trinity-dark p-6 rounded-lg border border-white/5">
@@ -478,7 +374,7 @@
                                 <div class="flex items-center flex-wrap gap-3 mb-2">
                                     <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2026</span>
                                     <span class="text-xs text-gray-500 font-mono">CVPR Workshop</span>
-                                    <span class="text-xs text-trinity-gold font-mono">18 citations</span>
+                                    <span class="text-xs text-trinity-gold font-mono dynamic-citation">18 citations</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Efficient Low Light Image Enhancement: NTIRE 2026 Challenge Report</h3>
                                 <p class="text-gray-400 text-sm mb-4">J. Yan, C. Tu, Q. Lin, Z. Wu, ..., <strong>Md Raqib Khan</strong> (et al.)</p>
@@ -494,7 +390,7 @@
                     </div>
                 </div>
 
-                <!-- Inclusive STEAM education (ACRT Journal) -->
+                <!-- STEAM ACRT -->
                 <div class="group relative glass-panel p-1 rounded-xl overflow-hidden hover:border-trinity-gold/50 transition-all duration-300">
                     <div class="absolute inset-0 bg-gradient-to-r from-trinity-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative bg-trinity-dark p-6 rounded-lg border border-white/5">
@@ -503,7 +399,7 @@
                                 <div class="flex items-center flex-wrap gap-3 mb-2">
                                     <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2026</span>
                                     <span class="text-xs text-gray-500 font-mono">ACRT Journal</span>
-                                    <span class="text-xs text-trinity-gold font-mono">2 citations</span>
+                                    <span class="text-xs text-trinity-gold font-mono dynamic-citation">2 citations</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Inclusive STEAM Education: A Framework for Teaching Coding and Robotics to Students with Visual Impairment Using Advanced Computer Vision</h3>
                                 <p class="text-gray-400 text-sm mb-4">M. Hamash, <strong>Md Raqib Khan</strong>, P. Tiernan</p>
@@ -528,7 +424,7 @@
                                 <div class="flex items-center flex-wrap gap-3 mb-2">
                                     <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2025</span>
                                     <span class="text-xs text-gray-500 font-mono">WACV</span>
-                                    <span class="text-xs text-trinity-gold font-mono">38 citations</span>
+                                    <span class="text-xs text-trinity-gold font-mono dynamic-citation">38 citations</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Phaseformer: Phase-based Attention Mechanism for Underwater Image Restoration and Beyond</h3>
                                 <p class="text-gray-400 text-sm mb-4"><strong>Md Raqib Khan</strong>, A. Negi, A. Kulkarni, S.S. Phutke, S.K. Vipparthi, S. Murala</p>
@@ -544,7 +440,7 @@
                     </div>
                 </div>
 
-                <!-- Inclusive STEAM education (arXiv) -->
+                <!-- STEAM arXiv -->
                 <div class="group relative glass-panel p-1 rounded-xl overflow-hidden hover:border-trinity-gold/50 transition-all duration-300">
                     <div class="absolute inset-0 bg-gradient-to-r from-trinity-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative bg-trinity-dark p-6 rounded-lg border border-white/5">
@@ -553,7 +449,7 @@
                                 <div class="flex items-center flex-wrap gap-3 mb-2">
                                     <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2025</span>
                                     <span class="text-xs text-gray-500 font-mono">arXiv</span>
-                                    <span class="text-xs text-trinity-gold font-mono">4 citations</span>
+                                    <span class="text-xs text-trinity-gold font-mono dynamic-citation">4 citations</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Inclusive STEAM Education: A Framework for Teaching Coding and Robotics to Students with Visual Impairment Using Advanced Computer Vision</h3>
                                 <p class="text-gray-400 text-sm mb-4">M. Hamash, <strong>Md Raqib Khan</strong>, P. Tiernan</p>
@@ -578,7 +474,7 @@
                                 <div class="flex items-center flex-wrap gap-3 mb-2">
                                     <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2025</span>
                                     <span class="text-xs text-gray-500 font-mono">IEEE TAI</span>
-                                    <span class="text-xs text-trinity-gold font-mono">–</span>
+                                    <span class="text-xs text-trinity-gold font-mono dynamic-citation">–</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">TransWaveNet: Transformer for Underwater Image Restoration with Wavelets</h3>
                                 <p class="text-gray-400 text-sm mb-4">P. Mishra, <strong>Md Raqib Khan</strong>, S.S. Phutke, S.K. Vipparthi, S. Murala</p>
@@ -603,7 +499,7 @@
                                 <div class="flex items-center flex-wrap gap-3 mb-2">
                                     <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2024</span>
                                     <span class="text-xs text-gray-500 font-mono">WACV</span>
-                                    <span class="text-xs text-trinity-gold font-mono">69 citations</span>
+                                    <span class="text-xs text-trinity-gold font-mono dynamic-citation">69 citations</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Spectroformer: Multi-domain Query Cascaded Transformer Network for Underwater Image Enhancement</h3>
                                 <p class="text-gray-400 text-sm mb-4"><strong>Md Raqib Khan</strong>, P. Mishra, N. Mehta, S.S. Phutke, S.K. Vipparthi, S. Nandi, S. Murala</p>
@@ -619,7 +515,7 @@
                     </div>
                 </div>
 
-                <!-- NTIRE 2024 Image Shadow Removal -->
+                <!-- Shadow Removal -->
                 <div class="group relative glass-panel p-1 rounded-xl overflow-hidden hover:border-trinity-gold/50 transition-all duration-300">
                     <div class="absolute inset-0 bg-gradient-to-r from-trinity-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative bg-trinity-dark p-6 rounded-lg border border-white/5">
@@ -628,7 +524,7 @@
                                 <div class="flex items-center flex-wrap gap-3 mb-2">
                                     <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2024</span>
                                     <span class="text-xs text-gray-500 font-mono">CVPR Workshop</span>
-                                    <span class="text-xs text-trinity-gold font-mono">104 citations</span>
+                                    <span class="text-xs text-trinity-gold font-mono dynamic-citation">104 citations</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">NTIRE 2024 Image Shadow Removal Challenge Report</h3>
                                 <p class="text-gray-400 text-sm mb-4">F.A. Vasluianu, T. Seizinger, Z. Zhou, ..., <strong>Md Raqib Khan</strong> (et al.)</p>
@@ -644,7 +540,7 @@
                     </div>
                 </div>
 
-                <!-- Attentive Color Fusion -->
+                <!-- ACFTNet -->
                 <div class="group relative glass-panel p-1 rounded-xl overflow-hidden hover:border-trinity-gold/50 transition-all duration-300">
                     <div class="absolute inset-0 bg-gradient-to-r from-trinity-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div class="relative bg-trinity-dark p-6 rounded-lg border border-white/5">
@@ -653,7 +549,7 @@
                                 <div class="flex items-center flex-wrap gap-3 mb-2">
                                     <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2024</span>
                                     <span class="text-xs text-gray-500 font-mono">ICPR</span>
-                                    <span class="text-xs text-trinity-gold font-mono">–</span>
+                                    <span class="text-xs text-trinity-gold font-mono dynamic-citation">–</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Attentive Color Fusion Transformer Network (ACFTNet) for Underwater Image Enhancement</h3>
                                 <p class="text-gray-400 text-sm mb-4">M.U. Wani, <strong>Md Raqib Khan</strong>, A. Kulkarni, S.S. Phutke, S.K. Vipparthi, S. Murala</p>
@@ -678,7 +574,7 @@
                                 <div class="flex items-center flex-wrap gap-3 mb-2">
                                     <span class="px-2 py-1 rounded text-xs font-bold bg-blue-900/50 text-blue-300 border border-blue-500/30">2023</span>
                                     <span class="text-xs text-gray-500 font-mono">IJCNN</span>
-                                    <span class="text-xs text-trinity-gold font-mono">14 citations</span>
+                                    <span class="text-xs text-trinity-gold font-mono dynamic-citation">14 citations</span>
                                 </div>
                                 <h3 class="text-xl font-bold text-white mb-2 group-hover:text-trinity-gold transition-colors">Underwater Image Enhancement with Phase Transfer and Attention</h3>
                                 <p class="text-gray-400 text-sm mb-4"><strong>Md Raqib Khan</strong>, A. Kulkarni, S.S. Phutke, S. Murala</p>
@@ -696,7 +592,7 @@
             </div>
             
             <div class="mt-8 p-4 rounded-lg bg-blue-900/20 border border-blue-500/20 text-center">
-                <p class="text-sm text-gray-400">Data sourced from <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" rel="noopener noreferrer" class="text-trinity-gold underline">Google Scholar</a>. Last updated 2026‑05‑22.</p>
+                <p class="text-sm text-gray-400">Data sourced from <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" rel="noopener noreferrer" class="text-trinity-gold underline">Google Scholar</a>. Updates automatically via <code>scholar.json</code>.</p>
             </div>
         </div>
     </section>
@@ -818,4 +714,109 @@
         // 3. Terminal Animation
         const consoleOutput = document.getElementById('console-output');
         const commands = [
-            { prompt: 'raqib@tcd-depth-lab:~$ ', cmd: "cat research_focus.md", output: "Stereo Matching & Depth Est
+            { prompt: 'raqib@tcd-depth-lab:~$ ', cmd: "cat research_focus.md", output: "Stereo Matching & Depth Estimation\n> Real-time 3D Reconstruction\n> Autonomous Driving Perception\n> AR/VR Scene Understanding" },
+            { prompt: 'raqib@tcd-depth-lab:~$ ', cmd: "ls supervisors/", output: "muralas/  petercorcoran/  osullica/" },
+            { prompt: 'raqib@tcd-depth-lab:~$ ', cmd: "python status.py", output: "Loading TCD profile...\nStatus: Seeking collaborations in 3D Vision\nLocation: Dublin, Ireland" }
+        ];
+
+        let cmdIdx = 0;
+        function runCmd() {
+            if (cmdIdx >= commands.length) return;
+            const c = commands[cmdIdx];
+            const line = document.createElement('div');
+            line.innerHTML = `<span class="text-green-500">${c.prompt}</span><span class="text-white">${c.cmd}</span>`;
+            consoleOutput.appendChild(line);
+            
+            setTimeout(() => {
+                const out = document.createElement('div');
+                out.className = "text-gray-400 mb-4 pl-4 border-l-2 border-gray-700 whitespace-pre-line";
+                out.innerText = c.output;
+                consoleOutput.appendChild(out);
+                consoleOutput.scrollTop = consoleOutput.scrollHeight;
+                cmdIdx++;
+                setTimeout(runCmd, 1500);
+            }, 1000);
+        }
+        
+        const termObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !consoleOutput.classList.contains('started')) {
+                    consoleOutput.classList.add('started');
+                    runCmd();
+                    termObserver.unobserve(consoleOutput);
+                }
+            });
+        }, { threshold: 0.5 });
+        termObserver.observe(consoleOutput);
+
+        // 4. Sticky Nav
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-trinity-dark/90', 'backdrop-blur-lg', 'border-b', 'border-white/10');
+            } else {
+                navbar.classList.remove('bg-trinity-dark/90', 'backdrop-blur-lg', 'border-b', 'border-white/10');
+            }
+        });
+
+        // 5. Counter Animation
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.getAttribute('data-target'));
+                    const duration = 2000;
+                    const start = performance.now();
+                    
+                    const updateCount = (now) => {
+                        const elapsed = now - start;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const easeOut = 1 - Math.pow(1 - progress, 3);
+                        el.innerText = Math.floor(easeOut * target);
+                        if (progress < 1) requestAnimationFrame(updateCount);
+                        else el.innerText = target;
+                    };
+                    
+                    requestAnimationFrame(updateCount);
+                    observer.unobserve(el);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.counter').forEach(c => counterObserver.observe(c));
+
+        // 6. Auto-Update Google Scholar Data
+        // Fetches scholar.json from your repo and overwrites stats/citations
+        (function loadScholarData() {
+            fetch('scholar.json?v=' + Date.now())
+                .then(res => res.ok ? res.json() : Promise.reject('No scholar.json'))
+                .then(data => {
+                    // Update top stats
+                    if (data.citations !== undefined) {
+                        const el = document.querySelector('[data-stat="citations"]');
+                        if (el) { el.setAttribute('data-target', data.citations); el.innerText = data.citations; }
+                    }
+                    if (data.publications !== undefined) {
+                        const el = document.querySelector('[data-stat="publications"]');
+                        if (el) { el.setAttribute('data-target', data.publications); el.innerText = data.publications; }
+                    }
+                    if (data.h_index !== undefined) {
+                        const el = document.querySelector('[data-stat="h_index"]');
+                        if (el) { el.setAttribute('data-target', data.h_index); el.innerText = data.h_index; }
+                    }
+
+                    // Update per-paper citations if provided
+                    if (data.papers && Array.isArray(data.papers)) {
+                        const badges = document.querySelectorAll('.dynamic-citation');
+                        data.papers.forEach((paper, idx) => {
+                            if (badges[idx] && paper.citations !== undefined) {
+                                badges[idx].innerText = paper.citations + (paper.citations === 1 ? ' citation' : ' citations');
+                            }
+                        });
+                    }
+                })
+                .catch(err => console.log('Scholar auto-update:', err));
+        })();
+    </script>
+</body>
+</html>
