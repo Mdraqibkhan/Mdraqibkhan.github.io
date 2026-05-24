@@ -62,7 +62,6 @@
         }
     </script>
     <style>
-        /* Ensure smooth scrolling works even without Tailwind's scroll-smooth utility */
         html {
             scroll-behavior: smooth;
         }
@@ -176,8 +175,14 @@
     <!-- Hero Section -->
     <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+            
+            <!-- Main 5-Column Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+                
+                <!-- Left: Profile Text + Supervision Team (3 cols) -->
                 <div class="lg:col-span-3 space-y-8 opacity-0 animate-fade-in-up" style="animation-delay: 0.2s;">
+                    
+                    <!-- Profile Text Block -->
                     <div>
                         <p class="text-trinity-gold font-mono text-sm tracking-widest mb-4 uppercase">PhD Candidate @ Trinity College Dublin</p>
                         <h1 class="text-5xl md:text-7xl font-serif font-bold leading-tight">
@@ -187,113 +192,109 @@
                             <span id="typewriter" class="text-xl md:text-2xl text-gray-300 font-mono typing-cursor"></span>
                         </div>
                     </div>
+                    
                     <p class="text-gray-400 text-lg leading-relaxed max-w-2xl border-l-2 border-trinity-gold/50 pl-6">
                         Pursuing a PhD in Computer Science at Trinity College Dublin, specializing in <strong class="text-white">Stereo Matching</strong> and <strong class="text-white">Depth Estimation</strong> for advanced robotics, AR, and VR applications. My research addresses critical challenges in 3D reconstruction and autonomous driving.
                     </p>
+                    
                     <div class="flex flex-wrap gap-4">
-                        <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="group flex items-center gap-3 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all">
+                        <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all">
                             <i class="fas fa-graduation-cap text-trinity-gold text-xl"></i>
                             <span class="font-medium">Google Scholar</span>
                         </a>
-                        <a href="https://www.linkedin.com/in/md-raqib-khan/" target="_blank" class="group flex items-center gap-3 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all">
+                        <a href="https://www.linkedin.com/in/md-raqib-khan/" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-3 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all">
                             <i class="fab fa-linkedin text-[#0077b5] text-xl"></i>
                             <span class="font-medium">LinkedIn</span>
                         </a>
                     </div>
+
+                    <!-- Supervision Team: Horizontally below profile -->
+                    <div class="relative z-10 w-full pt-10 border-t border-white/10">
+                        <p class="text-sm font-mono text-gray-400 uppercase tracking-[0.25em] mb-8 text-center">
+                            Supervision Team
+                        </p>
                     
-                <!-- Supervisor Photos -->
-                <div class="relative z-10 w-full mt-14 mb-10">
-                    <p class="text-sm font-mono text-gray-400 uppercase tracking-[0.25em] mb-8 text-center">
-                        Supervision Team
-                    </p>
-                
-                    <div class="flex flex-wrap justify-center gap-10">
-                
-                        <!-- Supervisor 1 -->
-                        <a href="https://www.scss.tcd.ie/~muralas/"
-                           target="_blank"
-                           class="group text-center w-44">
-                
-                            <div class="w-32 h-32 mx-auto rounded-full overflow-hidden
-                                        border-4 border-white/10
-                                        shadow-xl shadow-black/30
-                                        group-hover:border-trinity-gold
-                                        group-hover:scale-105
-                                        transition-all duration-300">
-                
-                                <img src="https://www.scss.tcd.ie/~muralas/wp-content/uploads/2023/07/murala.png"
-                                     alt="Subrahmanyam Murala"
-                                     class="w-full h-full object-cover">
-                            </div>
-                
-                            <p class="text-sm font-semibold text-white mt-4 group-hover:text-trinity-gold transition-colors">
-                                Subrahmanyam Murala
-                            </p>
-                
-                            <p class="text-xs text-gray-400 font-mono uppercase tracking-wide">
-                                TCD
-                            </p>
-                        </a>
-                
-                        <!-- Supervisor 2 -->
-                        <a href="https://www.universityofgalway.ie/science-engineering/staff-profiles/petercorcoran/"
-                           target="_blank"
-                           class="group text-center w-44">
-                
-                            <div class="w-32 h-32 mx-auto rounded-full overflow-hidden
-                                        border-4 border-white/10
-                                        shadow-xl shadow-black/30
-                                        group-hover:border-trinity-gold
-                                        group-hover:scale-105
-                                        transition-all duration-300">
-                
-                                <img src="https://www.universityofgalway.ie/media/researchsub-sites/c3i/images/Peter_320x320.jpg"
-                                     alt="Peter Corcoran"
-                                     class="w-full h-full object-cover">
-                            </div>
-                
-                            <p class="text-sm font-semibold text-white mt-4 group-hover:text-trinity-gold transition-colors">
-                                Peter Corcoran
-                            </p>
-                
-                            <p class="text-xs text-gray-400 font-mono uppercase tracking-wide">
-                                UoG
-                            </p>
-                        </a>
-                
-                        <!-- Supervisor 3 -->
-                        <a href="https://www.tcd.ie/scss/people/academic-staff/osullica/"
-                           target="_blank"
-                           class="group text-center w-44">
-                
-                            <div class="w-32 h-32 mx-auto rounded-full overflow-hidden
-                                        border-4 border-white/10
-                                        shadow-xl shadow-black/30
-                                        group-hover:border-trinity-gold
-                                        group-hover:scale-105
-                                        transition-all duration-300">
-                
-                                <img src="https://pxl-tcdie.terminalfour.net/fit-in/320x320/filters:no_upscale()/filters:format(webp)/filters:quality(100)/prod01/channel_3/media/tcd/scss/headshots/ed70972c-9a09-4560-96e5-42c71860bb59.jpg"
-                                     alt="Carol O'Sullivan"
-                                     class="w-full h-full object-cover"
-                                     onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 80 80%22%3E%3Crect width=%2280%22 height=%2280%22 fill=%22%23001f5c%22/%3E%3Ctext x=%2225%22 y=%2250%22 fill=%22white%22 font-size=%2220%22%3ECO%3C/text%3E%3C/svg%3E';this.onerror=null;">
-                            </div>
-                
-                            <p class="text-sm font-semibold text-white mt-4 group-hover:text-trinity-gold transition-colors">
-                                Carol O’Sullivan
-                            </p>
-                
-                            <p class="text-xs text-gray-400 font-mono uppercase tracking-wide">
-                                TCD
-                            </p>
-                        </a>
-                
+                        <div class="flex flex-wrap justify-center gap-10">
+                    
+                            <!-- Supervisor 1 -->
+                            <a href="https://www.scss.tcd.ie/~muralas/"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="group text-center w-44">
+                                <div class="w-32 h-32 mx-auto rounded-full overflow-hidden
+                                            border-4 border-white/10
+                                            shadow-xl shadow-black/30
+                                            group-hover:border-trinity-gold
+                                            group-hover:scale-105
+                                            transition-all duration-300">
+                                    <img src="https://www.scss.tcd.ie/~muralas/wp-content/uploads/2023/07/murala.png"
+                                         alt="Subrahmanyam Murala"
+                                         class="w-full h-full object-cover"
+                                         loading="lazy">
+                                </div>
+                                <p class="text-sm font-semibold text-white mt-4 group-hover:text-trinity-gold transition-colors">
+                                    Subrahmanyam Murala
+                                </p>
+                                <p class="text-xs text-gray-400 font-mono uppercase tracking-wide">
+                                    TCD
+                                </p>
+                            </a>
+                    
+                            <!-- Supervisor 2 -->
+                            <a href="https://www.universityofgalway.ie/science-engineering/staff-profiles/petercorcoran/"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="group text-center w-44">
+                                <div class="w-32 h-32 mx-auto rounded-full overflow-hidden
+                                            border-4 border-white/10
+                                            shadow-xl shadow-black/30
+                                            group-hover:border-trinity-gold
+                                            group-hover:scale-105
+                                            transition-all duration-300">
+                                    <img src="https://www.universityofgalway.ie/media/researchsub-sites/c3i/images/Peter_320x320.jpg"
+                                         alt="Peter Corcoran"
+                                         class="w-full h-full object-cover"
+                                         loading="lazy">
+                                </div>
+                                <p class="text-sm font-semibold text-white mt-4 group-hover:text-trinity-gold transition-colors">
+                                    Peter Corcoran
+                                </p>
+                                <p class="text-xs text-gray-400 font-mono uppercase tracking-wide">
+                                    UoG
+                                </p>
+                            </a>
+                    
+                            <!-- Supervisor 3 -->
+                            <a href="https://www.tcd.ie/scss/people/academic-staff/osullica/"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="group text-center w-44">
+                                <div class="w-32 h-32 mx-auto rounded-full overflow-hidden
+                                            border-4 border-white/10
+                                            shadow-xl shadow-black/30
+                                            group-hover:border-trinity-gold
+                                            group-hover:scale-105
+                                            transition-all duration-300">
+                                    <img src="https://pxl-tcdie.terminalfour.net/fit-in/320x320/filters:no_upscale()/filters:format(webp)/filters:quality(100)/prod01/channel_3/media/tcd/scss/headshots/ed70972c-9a09-4560-96e5-42c71860bb59.jpg"
+                                         alt="Carol O'Sullivan"
+                                         class="w-full h-full object-cover"
+                                         loading="lazy"
+                                         onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 80 80%22%3E%3Crect width=%2280%22 height=%2280%22 fill=%22%23001f5c%22/%3E%3Ctext x=%2225%22 y=%2250%22 fill=%22white%22 font-size=%2220%22%3ECO%3C/text%3E%3C/svg%3E';this.onerror=null;">
+                                </div>
+                                <p class="text-sm font-semibold text-white mt-4 group-hover:text-trinity-gold transition-colors">
+                                    Carol O’Sullivan
+                                </p>
+                                <p class="text-xs text-gray-400 font-mono uppercase tracking-wide">
+                                    TCD
+                                </p>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Profile Photo Section -->
+                <!-- Right: Profile Photo (2 cols) -->
                 <div class="lg:col-span-2 hidden lg:block opacity-0 animate-fade-in-up" style="animation-delay: 0.4s;">
-                    <div class="relative w-full max-w-md mx-auto">
+                    <div class="relative w-full max-w-md mx-auto lg:ml-auto lg:mr-0">
                         <!-- Ambient Glow -->
                         <div class="absolute inset-0 bg-gradient-to-tr from-trinity-gold to-trinity-blue rounded-full blur-3xl opacity-20 animate-pulse-slow"></div>
                         
@@ -321,7 +322,9 @@
                     </div>
                 </div>
             </div>
+        </div>
 
+        <!-- Scroll Indicator -->
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
             <span class="text-xs font-mono tracking-widest">SCROLL</span>
             <div class="w-px h-12 bg-gradient-to-b from-white to-transparent"></div>
@@ -434,7 +437,7 @@
                     <span class="text-trinity-gold font-mono text-sm tracking-widest uppercase">Scholarly Work</span>
                     <h2 class="mt-2 text-3xl md:text-5xl font-serif font-bold">Publications</h2>
                 </div>
-                <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="mt-4 md:mt-0 text-sm text-gray-400 hover:text-trinity-gold transition-colors flex items-center gap-2">
+                <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" rel="noopener noreferrer" class="mt-4 md:mt-0 text-sm text-gray-400 hover:text-trinity-gold transition-colors flex items-center gap-2">
                     View Google Scholar <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
@@ -459,7 +462,7 @@
                                     <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#ImageRestoration</span>
                                 </div>
                             </div>
-                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
+                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
@@ -484,7 +487,7 @@
                                     <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#Enhancement</span>
                                 </div>
                             </div>
-                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
+                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
@@ -509,7 +512,7 @@
                                     <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#ComputerVision</span>
                                 </div>
                             </div>
-                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
+                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
@@ -534,7 +537,7 @@
                                     <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#ImageRestoration</span>
                                 </div>
                             </div>
-                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
+                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
@@ -559,7 +562,7 @@
                                     <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#Accessibility</span>
                                 </div>
                             </div>
-                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
+                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
@@ -584,7 +587,7 @@
                                     <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#Wavelets</span>
                                 </div>
                             </div>
-                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
+                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
@@ -609,7 +612,7 @@
                                     <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#Transformer</span>
                                 </div>
                             </div>
-                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
+                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
@@ -634,7 +637,7 @@
                                     <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#Restoration</span>
                                 </div>
                             </div>
-                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
+                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
@@ -659,7 +662,7 @@
                                     <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#Fusion</span>
                                 </div>
                             </div>
-                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
+                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
@@ -684,7 +687,7 @@
                                     <span class="text-xs bg-white/5 px-2 py-1 rounded text-gray-400">#Attention</span>
                                 </div>
                             </div>
-                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
+                            <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-trinity-gold hover:text-trinity-dark transition-all">
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                         </div>
@@ -693,7 +696,7 @@
             </div>
             
             <div class="mt-8 p-4 rounded-lg bg-blue-900/20 border border-blue-500/20 text-center">
-                <p class="text-sm text-gray-400">Data sourced from <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" class="text-trinity-gold underline">Google Scholar</a>. Last updated 2026‑05‑22.</p>
+                <p class="text-sm text-gray-400">Data sourced from <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" rel="noopener noreferrer" class="text-trinity-gold underline">Google Scholar</a>. Last updated 2026‑05‑22.</p>
             </div>
         </div>
     </section>
@@ -707,10 +710,10 @@
             </p>
 
             <div class="flex justify-center gap-6 mb-12">
-                <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" class="w-12 h-12 rounded-full bg-white/5 hover:bg-trinity-gold hover:text-trinity-dark flex items-center justify-center text-xl transition-all duration-300">
+                <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=RdE9ayMAAAAJ" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-white/5 hover:bg-trinity-gold hover:text-trinity-dark flex items-center justify-center text-xl transition-all duration-300">
                     <i class="fas fa-graduation-cap"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/md-raqib-khan/" target="_blank" class="w-12 h-12 rounded-full bg-white/5 hover:bg-[#0077b5] flex items-center justify-center text-xl transition-all duration-300">
+                <a href="https://www.linkedin.com/in/md-raqib-khan/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-white/5 hover:bg-[#0077b5] flex items-center justify-center text-xl transition-all duration-300">
                     <i class="fab fa-linkedin"></i>
                 </a>
                 <a href="mailto:khanmd@tcd.ie" class="w-12 h-12 rounded-full bg-white/5 hover:bg-white hover:text-trinity-dark flex items-center justify-center text-xl transition-all duration-300">
@@ -815,76 +818,4 @@
         // 3. Terminal Animation
         const consoleOutput = document.getElementById('console-output');
         const commands = [
-            { prompt: 'raqib@tcd-depth-lab:~$ ', cmd: "cat research_focus.md", output: "Stereo Matching & Depth Estimation\n> Real-time 3D Reconstruction\n> Autonomous Driving Perception\n> AR/VR Scene Understanding" },
-            { prompt: 'raqib@tcd-depth-lab:~$ ', cmd: "ls supervisors/", output: "muralas/  petercorcoran/  osullica/" },
-            { prompt: 'raqib@tcd-depth-lab:~$ ', cmd: "python status.py", output: "Loading TCD profile...\nStatus: Seeking collaborations in 3D Vision\nLocation: Dublin, Ireland" }
-        ];
-
-        let cmdIdx = 0;
-        function runCmd() {
-            if (cmdIdx >= commands.length) return;
-            const c = commands[cmdIdx];
-            const line = document.createElement('div');
-            line.innerHTML = `<span class="text-green-500">${c.prompt}</span><span class="text-white">${c.cmd}</span>`;
-            consoleOutput.appendChild(line);
-            
-            setTimeout(() => {
-                const out = document.createElement('div');
-                out.className = "text-gray-400 mb-4 pl-4 border-l-2 border-gray-700 whitespace-pre-line";
-                out.innerText = c.output;
-                consoleOutput.appendChild(out);
-                consoleOutput.scrollTop = consoleOutput.scrollHeight;
-                cmdIdx++;
-                setTimeout(runCmd, 1500);
-            }, 1000);
-        }
-        
-        const termObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && !consoleOutput.classList.contains('started')) {
-                    consoleOutput.classList.add('started');
-                    runCmd();
-                    termObserver.unobserve(consoleOutput);
-                }
-            });
-        }, { threshold: 0.5 });
-        termObserver.observe(consoleOutput);
-
-        // 4. Sticky Nav
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('bg-trinity-dark/90', 'backdrop-blur-lg', 'border-b', 'border-white/10');
-            } else {
-                navbar.classList.remove('bg-trinity-dark/90', 'backdrop-blur-lg', 'border-b', 'border-white/10');
-            }
-        });
-
-        // 5. Counter Animation (Your real stats: 268 citations, 10 publications, 6 h-index)
-        const counterObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const el = entry.target;
-                    const target = parseInt(el.getAttribute('data-target'));
-                    const duration = 2000;
-                    const start = performance.now();
-                    
-                    const updateCount = (now) => {
-                        const elapsed = now - start;
-                        const progress = Math.min(elapsed / duration, 1);
-                        const easeOut = 1 - Math.pow(1 - progress, 3);
-                        el.innerText = Math.floor(easeOut * target);
-                        if (progress < 1) requestAnimationFrame(updateCount);
-                        else el.innerText = target;
-                    };
-                    
-                    requestAnimationFrame(updateCount);
-                    observer.unobserve(el);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        document.querySelectorAll('.counter').forEach(c => counterObserver.observe(c));
-    </script>
-</body>
-</html>
+            { prompt: 'raqib@tcd-depth-lab:~$ ', cmd: "cat research_focus.md", output: "Stereo Matching & Depth Est
