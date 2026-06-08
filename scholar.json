@@ -1,12 +1,12 @@
 {
-  "citations": 319,
+  "citations": 320,
   "publications": 10,
   "h_index": 6,
   "papers": [
     { "title": "NTIRE 2026 ...", "citations": 36 },
     { "title": "Efficient Low Light ...", "citations": 38 },
     { "title": "Inclusive STEAM (ACRT)", "citations": 3 },
-    { "title": "Phaseformer", "citations": 39 },
+    { "title": "Phaseformer", "citations": 44 },
     { "title": "Inclusive STEAM (arXiv)", "citations": 6 },
     { "title": "TransWaveNet", "citations": 0 },
     { "title": "Spectroformer", "citations": 72 },
