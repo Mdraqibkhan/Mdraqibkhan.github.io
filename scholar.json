@@ -1,17 +1,17 @@
 {
-  "citations": 270,
+  "citations": 319,
   "publications": 10,
   "h_index": 6,
   "papers": [
-    { "title": "NTIRE 2026 ...", "citations": 19 },
-    { "title": "Efficient Low Light ...", "citations": 19 },
-    { "title": "Inclusive STEAM (ACRT)", "citations": 2 },
+    { "title": "NTIRE 2026 ...", "citations": 36 },
+    { "title": "Efficient Low Light ...", "citations": 38 },
+    { "title": "Inclusive STEAM (ACRT)", "citations": 3 },
     { "title": "Phaseformer", "citations": 39 },
-    { "title": "Inclusive STEAM (arXiv)", "citations": 4 },
+    { "title": "Inclusive STEAM (arXiv)", "citations": 6 },
     { "title": "TransWaveNet", "citations": 0 },
-    { "title": "Spectroformer", "citations": 69 },
-    { "title": "NTIRE Shadow Removal", "citations": 105 },
+    { "title": "Spectroformer", "citations": 72 },
+    { "title": "NTIRE Shadow Removal", "citations": 106 },
     { "title": "ACFTNet", "citations": 0 },
-    { "title": "IJCNN 2023", "citations": 14 }
+    { "title": "IJCNN 2023", "citations": 15 }
   ]
 }
