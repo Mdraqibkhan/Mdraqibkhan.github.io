@@ -24,7 +24,11 @@
             --gradient-end: #1e293b;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -56,8 +60,13 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translate(0, 0); }
-            50% { transform: translate(-30px, -30px); }
+            0%,
+            100% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(-30px, -30px);
+            }
         }
 
         .hero-content {
@@ -72,9 +81,9 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.15);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             padding: 8px 20px;
             border-radius: 100px;
             font-size: 14px;
@@ -83,7 +92,9 @@
             color: var(--accent-light);
         }
 
-        .venue-badge i { font-size: 12px; }
+        .venue-badge i {
+            font-size: 12px;
+        }
 
         .hero h1 {
             font-size: clamp(2.5rem, 5vw, 4rem);
@@ -102,7 +113,7 @@
 
         .hero-subtitle {
             font-size: 1.25rem;
-            color: rgba(255,255,255,0.7);
+            color: rgba(255, 255, 255, 0.7);
             max-width: 700px;
             margin-bottom: 40px;
             font-weight: 400;
@@ -133,33 +144,35 @@
         .btn-primary {
             background: white;
             color: var(--primary);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
         }
 
         .btn-secondary {
-            background: rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.08);
             color: white;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
         }
 
         .btn-secondary:hover {
-            background: rgba(255,255,255,0.15);
+            background: rgba(255, 255, 255, 0.15);
             transform: translateY(-2px);
         }
 
-        .btn i { font-size: 16px; }
+        .btn i {
+            font-size: 16px;
+        }
 
         /* Navigation */
         .nav {
             position: sticky;
             top: 0;
-            background: rgba(255,255,255,0.9);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
             z-index: 100;
@@ -197,7 +210,8 @@
             position: relative;
         }
 
-        .nav-links a:hover, .nav-links a.active {
+        .nav-links a:hover,
+        .nav-links a.active {
             color: var(--accent);
         }
 
@@ -245,7 +259,7 @@
             width: 100%;
             border-radius: 16px;
             border: 1px solid var(--border);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
         .teaser-caption {
@@ -292,49 +306,6 @@
             line-height: 1.7;
         }
 
-        /* Results */
-        .results-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 24px;
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-        }
-
-        .results-table th {
-            background: var(--primary);
-            color: white;
-            padding: 14px 20px;
-            text-align: left;
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        .results-table td {
-            padding: 14px 20px;
-            border-bottom: 1px solid var(--border);
-            font-size: 14px;
-        }
-
-        .results-table tr:nth-child(even) {
-            background: var(--surface-elevated);
-        }
-
-        .results-table tr:hover {
-            background: rgba(59, 130, 246, 0.04);
-        }
-
-        .results-table .best {
-            color: var(--success);
-            font-weight: 700;
-        }
-
-        .results-table .ours {
-            background: rgba(59, 130, 246, 0.06);
-            font-weight: 600;
-        }
-
         /* Stats Grid */
         .stats-grid {
             display: grid;
@@ -354,7 +325,7 @@
 
         .stat-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
             border-color: var(--accent-light);
         }
 
@@ -401,8 +372,8 @@
             position: absolute;
             top: 12px;
             right: 12px;
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             color: white;
             padding: 6px 14px;
             border-radius: 8px;
@@ -413,7 +384,7 @@
         }
 
         .copy-btn:hover {
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
         }
 
         .copy-btn.copied {
@@ -430,7 +401,7 @@
         }
 
         footer p {
-            color: rgba(255,255,255,0.5);
+            color: rgba(255, 255, 255, 0.5);
             font-size: 14px;
         }
 
@@ -442,7 +413,7 @@
         }
 
         footer .footer-links a {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
             font-size: 14px;
             transition: color 0.2s;
@@ -454,8 +425,14 @@
 
         /* Animations */
         @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .animate-in {
@@ -464,10 +441,19 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .stats-grid { grid-template-columns: 1fr; }
-            .hero-actions { flex-direction: column; }
-            .btn { width: 100%; justify-content: center; }
-            .nav-links { display: none; }
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-actions {
+                flex-direction: column;
+            }
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .nav-links {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -485,7 +471,7 @@
                 Lightweight Zero-Shot Stereo Matching
             </h1>
             <p class="hero-subtitle animate-in" style="animation-delay: 0.2s">
-                Achieving state-of-the-art zero-shot stereo matching with only <strong>3.36M parameters</strong> 
+                Achieving state-of-the-art zero-shot stereo matching with only <strong>3.36M parameters</strong>
                 through cost volume stabilization and cross-view correspondence.
             </p>
             <div class="hero-actions animate-in" style="animation-delay: 0.3s">
@@ -518,8 +504,8 @@
     <section id="architecture">
         <h2 class="section-title">Architecture</h2>
         <p class="section-desc">
-            LiteMatch features a two-stream encoder with cross-view correspondence and a disparity refinement module. 
-            The framework separates high-frequency and semantic features for robust matching, then stabilizes the cost volume 
+            LiteMatch features a two-stream encoder with cross-view correspondence and a disparity refinement module.
+            The framework separates high-frequency and semantic features for robust matching, then stabilizes the cost volume
             through our novel Cross-View Correspondence (CVC) Loss.
         </p>
 
@@ -544,9 +530,9 @@
                 <div class="arch-card-content">
                     <h4>Full Network Architecture</h4>
                     <p>
-                        <strong>Feature Extraction & Stabilization:</strong> Dual-stream encoder (E1 for cross-view correspondence, E2 for high-frequency features via FFT filter Bh). 
+                        <strong>Feature Extraction & Stabilization:</strong> Dual-stream encoder (E1 for cross-view correspondence, E2 for high-frequency features via FFT filter Bh).
                         The cost volume is refined iteratively using CVC-Loss to produce stable disparity D2.<br><br>
-                        <strong>Disparity Refinement Module:</strong> A non-iterative transformer decoder (Tde) with disparity context encoder (Egeo) and correspondence encoder (Ecorr) 
+                        <strong>Disparity Refinement Module:</strong> A non-iterative transformer decoder (Tde) with disparity context encoder (Egeo) and correspondence encoder (Ecorr)
                         produces the base disparity DBase, followed by iterative refinement (IR) to generate the final disparity Dfinal.
                     </p>
                 </div>
@@ -559,7 +545,7 @@
         <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px;">
             <h2 class="section-title">Visual Results</h2>
             <p class="section-desc">
-                Qualitative comparisons demonstrating LiteMatch's superior zero-shot generalization across early-stage disparity, 
+                Qualitative comparisons demonstrating LiteMatch's superior zero-shot generalization across early-stage disparity,
                 parameter efficiency, and fine-grained detail preservation.
             </p>
 
@@ -586,67 +572,11 @@
             LiteMatch achieves competitive performance with only 3.36M parameters, outperforming methods with 100x more parameters on zero-shot benchmarks.
         </p>
 
-        <table class="results-table">
-            <thead>
-                <tr>
-                    <th>Method</th>
-                    <th>Params</th>
-                    <th>DrivingStereo (EPE)</th>
-                    <th>Middlebury (Bad1%)</th>
-                    <th>ETH3D (Bad1%)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>MonSter</td>
-                    <td>388M</td>
-                    <td>2.89</td>
-                    <td>0.09</td>
-                    <td>0.55</td>
-                </tr>
-                <tr>
-                    <td>FoundationStereo</td>
-                    <td>375M</td>
-                    <td>3.12</td>
-                    <td>0.37</td>
-                    <td>0.24</td>
-                </tr>
-                <tr>
-                    <td>SMoEStereo</td>
-                    <td>113.6M</td>
-                    <td>3.45</td>
-                    <td>0.28</td>
-                    <td>0.30</td>
-                </tr>
-                <tr>
-                    <td>DEFOM-Stereo</td>
-                    <td>43.2M</td>
-                    <td>4.02</td>
-                    <td>0.28</td>
-                    <td>0.55</td>
-                </tr>
-                <tr>
-                    <td>Selective-IGEV</td>
-                    <td>13.14M</td>
-                    <td>5.23</td>
-                    <td>-</td>
-                    <td>-</td>
-                </tr>
-                <tr class="ours">
-                    <td><strong>LiteMatch (Ours)</strong></td>
-                    <td class="best"><strong>3.36M</strong></td>
-                    <td class="best"><strong>2.76</strong></td>
-                    <td class="best"><strong>0.05</strong></td>
-                    <td class="best"><strong>0.21</strong></td>
-                </tr>
-            </tbody>
-        </table>
-
-        <div style="margin-top:48px;">
+        <div style="margin-top:0;">
             <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:16px;">Detailed Visual Comparisons</h3>
             <img src="assets/visual_all.jpg" alt="Detailed Visual Comparisons" class="teaser-image">
             <p class="teaser-caption">
-                Top: Middlebury benchmark comparisons (Bad1% scores shown). Bottom: KITTI and zero-shot generalization scenarios. 
+                Top: Middlebury benchmark comparisons (Bad1% scores shown). Bottom: KITTI and zero-shot generalization scenarios.
                 LiteMatch produces cleaner boundaries, fewer artifacts, and more accurate disparity maps across all settings.
             </p>
         </div>
@@ -685,8 +615,12 @@
                 e.preventDefault();
                 const target = document.querySelector(link.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove(
+                        'active'));
                     link.classList.add('active');
                 }
             });
