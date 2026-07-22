@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,10 +10,13 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Noto+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <main>
     <section class="hero">
@@ -20,20 +24,20 @@
         <h1 class="paper-title">LiteMatch: Lightweight Zero-Shot Stereo Matching via Cost Volume Stabilization</h1>
 
         <div class="authors" aria-label="Authors">
-          <a href="#" title="Replace # with the author's homepage">Md Raqib Khan</a><sup>1</sup>,
-          <a href="#" title="Replace with co-author homepage">Co-author Name</a><sup>1</sup>,
-          <a href="#" title="Replace with co-author homepage">Co-author Name</a><sup>2</sup>
+          <a href="#" title="Md Raqib Khan">Md Raqib Khan</a><sup>1</sup>,
+          <a href="#" title="Santosh Kumar Vipparthi">Santosh Kumar Vipparthi</a><sup>2</sup>,
+          <a href="#" title="Subrahmanyam Murala">Subrahmanyam Murala</a><sup>1</sup>
         </div>
 
         <p class="venue">ECCV 2026</p>
 
         <div class="affiliations">
-          <span><sup>1</sup>Your University / Lab</span>
-          <span><sup>2</sup>Collaborating Institution</span>
+          <span><sup>1</sup>CVPR Lab, Trinity College Dublin</span>
+          <span><sup>2</sup>CVPR Lab, IIT Ropar</span>
         </div>
 
         <div class="link-row" aria-label="Project links">
-          <a class="pill" href="https://arxiv.org/pdf/2606.31636" target="_blank" rel="noopener noreferrer">
+          <a class="pill" href="assets/2606.31636v1.pdf" target="_blank" rel="noopener noreferrer">
             <span class="icon"><i class="fa-solid fa-file-pdf"></i></span><span>Paper</span>
           </a>
           <a class="pill" href="https://github.com/Mdraqibkhan/Litematch" target="_blank" rel="noopener noreferrer">
@@ -49,9 +53,7 @@
     <section class="section teaser-section">
       <div class="container wide center">
         <figure>
-          <img
-            class="main-figure"
-            src="assets/front_visual.jpg"
+          <img class="main-figure" src="assets/front_visual.jpg"
             onerror="this.onerror=null;this.src='assets/placeholder-teaser.svg';"
             alt="LiteMatch qualitative overview and zero-shot stereo matching results">
           <figcaption>
@@ -65,12 +67,7 @@
       <div class="container narrow">
         <h2>Abstract</h2>
         <p class="abstract">
-          LiteMatch is a lightweight stereo-matching framework designed for strong zero-shot generalization.
-          It combines a two-stream feature encoder, cross-view correspondence learning, cost-volume stabilization,
-          and an efficient disparity refinement module. The model separates semantic and high-frequency evidence,
-          stabilizes matching before refinement, and predicts detailed disparity maps with only
-          <strong>3.36M parameters</strong>. Across unseen stereo benchmarks, LiteMatch aims to preserve sharp
-          boundaries and fine structures while remaining substantially smaller than competing methods.
+          Despite rapid progress in learning-based stereo matching, high accuracy is often achieved at the cost of heavy backbones and computationally intensive 3D cost volume processing, resulting in substantial memory and runtime overhead. More critically, these methods frequently struggle to generalize across domains, limiting their practical deployment. We present LiteMatch, a lightweight stereo matching framework that achieves strong zero-shot generalization through cost volume stabilization-without expensive 3D convolutions. LiteMatch employs two complementary encoders: a Cross-View Correspondence Encoder (CVCE) to capture global cross-view interactions, and a High-Frequency Encoder (HFE) that enhances fine structural details via FFT-based frequency cues. To stabilize the cost volume, we introduce the Cost Volume Consistency Loss (CVC-Loss), a voxel-wise binary cross-entropy objective applied to softmax-normalized cost distributions. By encouraging sharp and unimodal disparity probabilities, CVC-Loss promotes stable cost distributions and enables rapid convergence. A lightweight refinement module further produces sharp full-resolution disparities with low-iteration updates, avoiding heavy recurrent refinement. With a flexible design ranging from 3.36M to 9.58M parameters, LiteMatch achieves exceptional zero-shot generalization, delivering competitive EPE and D1 performance across Scene Flow, KITTI, Middlebury, ETH3D, and DrivingStereo. Our results establish that lightweight architectures can indeed generalize across domains without sacrificing accuracy.
         </p>
       </div>
     </section>
@@ -102,9 +99,7 @@
       <div class="container wide center">
         <h2>Method Overview</h2>
         <figure>
-          <img
-            class="main-figure method-figure"
-            src="assets/final_model.jpg"
+          <img class="main-figure method-figure" src="assets/final_model.jpg"
             onerror="this.onerror=null;this.src='assets/placeholder-method.svg';"
             alt="LiteMatch full network architecture">
           <figcaption>
@@ -138,9 +133,7 @@
         </div>
 
         <figure class="results-figure center">
-          <img
-            class="main-figure"
-            src="assets/visual_all.jpg"
+          <img class="main-figure" src="assets/visual_all.jpg"
             onerror="this.onerror=null;this.src='assets/placeholder-results.svg';"
             alt="Detailed LiteMatch benchmark and qualitative comparisons">
           <figcaption>
@@ -176,12 +169,13 @@
   <footer>
     <div class="container narrow center">
       <p>
-        This academic project-page layout is inspired by the clean presentation style used by modern computer-vision project pages.
+        This academic project-page layout is inspired by the clean presentation style used by modern computer-vision
+        project pages.
       </p>
-      <p class="footer-small">Replace placeholder author, affiliation, and citation information before publishing.</p>
     </div>
   </footer>
 
   <script src="script.js"></script>
 </body>
+
 </html>
